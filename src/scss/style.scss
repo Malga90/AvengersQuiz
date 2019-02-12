@@ -17,7 +17,7 @@
 
 
   // Variables
-  $button-color: #EE3769;
+  $button-color: #01153A;
 
 *, 
 *::before,
@@ -38,9 +38,26 @@
   margin: auto;
 }
 
+@mixin transform($in) {
+	transform:$in;
+	-webkit-transform:$in;
+	-moz-transform:$in;
+	-o-transform:$in;
+	-ms-transform:$in;
+}
+
+@mixin animation($in) {
+	animation:$in;
+	-webkit-animation:$in;
+	-moz-animation:$in;
+	-o-animation:$in;
+	-ms-animation:$in;
+}
+
 html {
     font-size: 62.5%;
     scroll-behavior: smooth;
+    height: 100%;
 }
 
 .header {
@@ -51,30 +68,53 @@ html {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-left: 8%; 
+    padding: 8%;
 }
 
-.text-box {
+.heading-primary {
   color: #B2C8E5;
-  font-size: 3.2rem;
+  font-size: 6.3rem;
+  margin-top: 10%;
+}
+
+.box-btn {
+  padding-top: 4%;
 }
 
 .btn {
   text-decoration: none;
   cursor: pointer;
-  border: 1px solid $button-color;
+  border: 2px solid $button-color;
   border-radius: 8px;
   outline: none;
   overflow: hidden;
   color: $button-color;
-  transition: all 0.3s 0.1s ease-out;
+  transition: all 0.4s ease-out;
   text-align: center;
-  
-  
+  font-size: 3rem;
+  padding: 1% 4%;
+  position: relative;
+  display: block;
+  width: 17%;
   
   &:hover{
-    color: #fff;
+    color: #B2C8E5;
+    border: 2px solid #B2C8E5; 
+    background: #01153A;
+    @include animation(shakeThatBooty 0.3s linear 1);		
   }
+}
+
+@keyframes shakeThatBooty {
+	33% {
+		@include transform(rotateZ(10deg));
+	}
+	67% {
+		@include transform(rotateZ(-10deg));
+	}
+	100% {
+		@include transform(rotateZ(10deg));
+	}
 }
 
 
