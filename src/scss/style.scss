@@ -16,14 +16,30 @@
   }
 
 
-* {
+  // Variables
+  $button-color: #EE3769;
+
+*, 
+*::before,
+*::after
+ {
    margin: 0;
    padding: 0;
-//    box-sizing: border-box; 
+   box-sizing: border-box; 
+}
+
+// Mixins
+@mixin center {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
 }
 
 html {
-    // font-size: 62.5%;
+    font-size: 62.5%;
     scroll-behavior: smooth;
 }
 
@@ -31,6 +47,35 @@ html {
     height: 100vh;
     background: url(../../src/img/avengers-1.jpg) no-repeat bottom center fixed; 
     background-size: 100vw 100vh;
-    
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 8%; 
 }
+
+.text-box {
+  color: #B2C8E5;
+  font-size: 3.2rem;
+}
+
+.btn {
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid $button-color;
+  border-radius: 8px;
+  outline: none;
+  overflow: hidden;
+  color: $button-color;
+  transition: all 0.3s 0.1s ease-out;
+  text-align: center;
+  
+  
+  
+  &:hover{
+    color: #fff;
+  }
+}
+
+
 
