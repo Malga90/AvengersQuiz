@@ -72,3 +72,26 @@ html {
     -moz-transform: rotateZ(10deg);
     -o-transform: rotateZ(10deg);
     -ms-transform: rotateZ(10deg); } }
+
+.section__questions {
+  height: 100vh; }
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%; }
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1; }
+
+.question-column {
+  background-color: blue;
+  height: 100vh; }
+
+.image-column {
+  background-color: green;
+  height: 100vh; }
