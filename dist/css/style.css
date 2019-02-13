@@ -6,6 +6,7 @@
   box-sizing: border-box; }
 
 html {
+  font-family: 'Poppins', sans-serif;
   font-size: 62.5%;
   scroll-behavior: smooth;
   height: 100%; }
@@ -88,9 +89,25 @@ html {
   flex-basis: 100%;
   flex: 1; }
 
+.question-box {
+  margin: 22%; }
+
 .question-column {
-  background-color: blue;
+  background-color: #568CB5;
   height: 100vh; }
+
+.question-heading {
+  font-size: 3rem;
+  color: #494C49;
+  margin-bottom: 8%;
+  line-height: 5rem; }
+
+.answers__list {
+  list-style-type: none; }
+  .answers__list-item {
+    font-size: 2.2rem;
+    line-height: 5rem;
+    color: #E0E0E2; }
 
 .image-column {
   background-color: green;
