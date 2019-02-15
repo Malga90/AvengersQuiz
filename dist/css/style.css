@@ -98,7 +98,7 @@ html {
 
 .question-heading {
   font-size: 3rem;
-  color: #494C49;
+  color: #35332E;
   margin-bottom: 8%;
   line-height: 5rem; }
 
@@ -109,6 +109,16 @@ html {
     line-height: 5rem;
     color: #E0E0E2; }
 
+.box-btn-next {
+  margin-left: 22%;
+  margin-top: -10%; }
+
+.btn-next {
+  width: 25%; }
+
+.arrow-right {
+  margin-left: 1.5rem; }
+
 .image-column {
-  background-color: green;
+  background-color: #01153A;
   height: 100vh; }
