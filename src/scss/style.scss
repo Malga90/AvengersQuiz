@@ -191,8 +191,19 @@ label {
 }
 
 .image-column {
-  background-color: $button-color;
+  background-color: #91AABD;
   height: 100vh;
 }
 
+.image-box {
+  display: flex;
+  justify-content: center;
+  
+  
+}
+
+.image {
+  // width: 80%;
+  height: 100vh;
+}
 

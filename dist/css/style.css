@@ -130,5 +130,12 @@ label {
   align-items: center; }
 
 .image-column {
-  background-color: #01153A;
+  background-color: #91AABD;
+  height: 100vh; }
+
+.image-box {
+  display: flex;
+  justify-content: center; }
+
+.image {
   height: 100vh; }
