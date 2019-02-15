@@ -105,7 +105,8 @@ html {
 .answers__list {
   list-style-type: none; }
   .answers__list-item {
-    font-size: 2.2rem;
+    font-size: 2.3rem;
+    margin-right: -10rem;
     line-height: 5rem;
     color: #E0E0E2; }
 
@@ -118,6 +119,15 @@ html {
 
 .arrow-right {
   margin-left: 1.5rem; }
+
+input[type='radio'] {
+  margin-right: 2.5rem;
+  width: 1.8rem;
+  height: 1.8rem; }
+
+label {
+  display: flex;
+  align-items: center; }
 
 .image-column {
   background-color: #01153A;
