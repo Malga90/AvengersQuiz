@@ -143,6 +143,9 @@ html {
   scroll-behavior: smooth;
   height: 100%; }
 
+body {
+  height: 100%; }
+
 .header {
   height: 100vh;
   background: url(../../src/img/avengers-1.jpg) no-repeat bottom center fixed;
