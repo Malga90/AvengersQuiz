@@ -7,10 +7,9 @@ buttons.forEach(function(currentBtn){
     currentBtn.addEventListener('click', function(e) {
     e.preventDefault();
     
-    if (current >= 5) {
+    if (current >= 10) {
         return false;
     }
-    
     
     pages[current].classList.add("pt-page-rotateCubeLeftOut");
     pages[current].classList.add("pt-page-ontop");
@@ -31,7 +30,6 @@ buttons.forEach(function(currentBtn){
     }, 600);
     
     console.log(current);
-    
     });
 
 });
