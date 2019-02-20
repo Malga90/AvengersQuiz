@@ -265,10 +265,10 @@ label {
   align-items: center; }
 
 .image-column {
-  background-color: #91AABD;
+  background-color: #fff;
   height: 100vh; }
-  .image-column--3, .image-column--2, .image-column--6, .image-column--7, .image-column--8 {
-    background: #fff; }
+  .image-column--1 {
+    background: #91AABD; }
   .image-column--9 {
     background: #272727; }
   .image-column--10 {
@@ -281,9 +281,3 @@ label {
 
 .image {
   height: 100vh; }
-  .image--6 {
-    height: 50vh;
-    margin-top: 25%; }
-  .image--8 {
-    height: 80vh;
-    margin-top: 10%; }
