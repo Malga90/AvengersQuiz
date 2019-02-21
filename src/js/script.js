@@ -253,6 +253,14 @@ buttons.forEach(function(currentBtn) {
         points += 1;
       } else if (answer.checked && checkedAnswer.value === "b") {
         points += 2;
+      } else if (answer.checked && checkedAnswer.value === "c") {
+        points += 3;
+      } else if (answer.checked && checkedAnswer.value === "d") {
+        points += 4;
+      } else if (answer.checked && checkedAnswer.value === "e") {
+        points += 5;
+      } else if (answer.checked && checkedAnswer.value === "f") {
+        points += 6;
       }
       console.log(points);
     });
