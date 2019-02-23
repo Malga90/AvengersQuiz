@@ -246,23 +246,53 @@ buttons.forEach(function(currentBtn) {
     }
 
     answerBtn.forEach(answer => {
-      let checkedAnswer = document.querySelector([
+      const checkedAnswer = document.querySelector([
         'input[type="radio"]:checked'
       ]);
-      if (answer.checked && checkedAnswer.value === "a") {
-        points += 1;
-      } else if (answer.checked && checkedAnswer.value === "b") {
-        points += 2;
-      } else if (answer.checked && checkedAnswer.value === "c") {
-        points += 3;
-      } else if (answer.checked && checkedAnswer.value === "d") {
-        points += 4;
-      } else if (answer.checked && checkedAnswer.value === "e") {
-        points += 5;
-      } else if (answer.checked && checkedAnswer.value === "f") {
-        points += 6;
-      }
-      console.log(points);
+
+      let finalAvenger = [
+        {
+          avenger: "Iron Man",
+          score: 0
+        },
+        {
+          avenger: "Black Widow",
+          score: 0
+        },
+        {
+          avenger: "Hulk",
+          score: 0
+        },
+        {
+          avenger: "Hawkeye",
+          score: 0
+        },
+        {
+          avenger: "Captain America",
+          score: 0
+        },
+        {
+          avenger: "Thor",
+          score: 0
+        }
+      ];
+
+      console.log(finalAvenger);
+
+      // if (answer.checked && checkedAnswer.value === "a") {
+      //   points += 1;
+      // } else if (answer.checked && checkedAnswer.value === "b") {
+      //   points += 2;
+      // } else if (answer.checked && checkedAnswer.value === "c") {
+      //   points += 3;
+      // } else if (answer.checked && checkedAnswer.value === "d") {
+      //   points += 4;
+      // } else if (answer.checked && checkedAnswer.value === "e") {
+      //   points += 5;
+      // } else if (answer.checked && checkedAnswer.value === "f") {
+      //   points += 6;
+      // }
+      // console.log(points);
     });
 
     pages[current].classList.add("pt-page-rotateCubeLeftOut");
