@@ -277,6 +277,13 @@ buttons.forEach(function(currentBtn) {
         }
       ];
 
+      function compare(a, b) {
+        if (a.score > b.score) return -1;
+        if (a.score < b.score) return 1;
+        return 0;
+      }
+
+      finalAvenger.sort(compare);
       console.log(finalAvenger);
 
       // if (answer.checked && checkedAnswer.value === "a") {
