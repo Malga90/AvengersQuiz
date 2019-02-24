@@ -156,7 +156,7 @@ function createSeries(data, idx) {
                         </ul>
                     </div>
                     <div class="box-btn-next">
-                        <a href="#" class="btn btn-next">Next<span class="arrow-right">&rArr;</span></a> 
+                        <a href="#" class="btn btn-next" data-button="answerBtn">Next<span class="arrow-right">&rArr;</span></a> 
                     </div>
                 </div>
                 </div>
@@ -219,7 +219,7 @@ function createSeries(data, idx) {
                         </ul>
                     </div>
                     <div class="box-btn-next">
-                        <a href="#" class="btn btn-next">Next<span class="arrow-right">&rArr;</span></a> 
+                        <a href="#" class="btn btn-next" data-button="answerBtn">Next<span class="arrow-right">&rArr;</span></a> 
                     </div>
                 </div>
                 </div>
@@ -230,12 +230,9 @@ function createSeries(data, idx) {
 
 // Variables for CSS Animation
 const pages = document.querySelectorAll(".pt-page");
-const buttons = document.querySelectorAll(".btn");
+const startButton = document.querySelector(".btn");
+const answerBtn = document.querySelectorAll(".btn-next");
 let current = 0;
-
-// Variables for quiz
-const answerBtn = document.querySelectorAll(['input[type="radio"]']);
-let points = 0;
 
 let finalAvenger = [
   {
@@ -264,68 +261,74 @@ let finalAvenger = [
   }
 ];
 
-buttons.forEach(function(currentBtn) {
-  currentBtn.addEventListener("click", function(e) {
-    e.preventDefault();
+function rotateCube() {
+  pages[current].classList.add("pt-page-rotateCubeLeftOut");
+  pages[current].classList.add("pt-page-ontop");
 
-    if (current >= 10) {
-      return false;
-    }
+  pages[current + 1].classList.add("pt-page-rotateCubeLeftIn");
+  pages[current + 1].classList.add("pt-page-current");
 
-    answerBtn.forEach(answer => {
-      const checkedAnswer = document.querySelector([
-        'input[type="radio"]:checked'
-      ]);
+  current++;
 
-      function compare(a, b) {
-        if (a.score > b.score) return -1;
-        if (a.score < b.score) return 1;
-        return 0;
-      }
+  setTimeout(() => {
+    pages[current].classList.remove("pt-page-rotateCubeLeftIn");
+    pages[current - 1].classList.remove("pt-page-current");
+    pages[current - 1].classList.remove("pt-page-rotateCubeLeftOut");
+    pages[current - 1].classList.remove("pt-page-ontop");
+  }, 600);
+}
 
-      if (answer.checked) {
-        if (checkedAnswer.value === "a") {
-          objIndex = finalAvenger.findIndex(obj => obj.avenger == "Iron Man");
-          finalAvenger[objIndex].score += 1;
-        } else if (checkedAnswer.value === "b") {
-          objIndex = finalAvenger.findIndex(
-            obj => obj.avenger == "Black Widow"
-          );
-          finalAvenger[objIndex].score += 1;
-        } else if (checkedAnswer.value === "c") {
-          objIndex = finalAvenger.findIndex(obj => obj.avenger == "Hulk");
-          finalAvenger[objIndex].score += 1;
-        } else if (checkedAnswer.value === "d") {
-          objIndex = finalAvenger.findIndex(obj => obj.avenger == "Hawkeye");
-          finalAvenger[objIndex].score += 1;
-        } else if (checkedAnswer.value === "e") {
-          objIndex = finalAvenger.findIndex(
-            obj => obj.avenger == "Captain America"
-          );
-          finalAvenger[objIndex].score += 1;
-        } else if (checkedAnswer.value === "f") {
-          objIndex = finalAvenger.findIndex(obj => obj.avenger == "Thor");
-          finalAvenger[objIndex].score += 1;
-        }
-
-        finalAvenger.sort(compare);
-      }
-      console.log(finalAvenger);
-    });
-
-    pages[current].classList.add("pt-page-rotateCubeLeftOut");
-    pages[current].classList.add("pt-page-ontop");
-
-    pages[current + 1].classList.add("pt-page-rotateCubeLeftIn");
-    pages[current + 1].classList.add("pt-page-current");
-
-    current++;
-
-    setTimeout(() => {
-      pages[current].classList.remove("pt-page-rotateCubeLeftIn");
-      pages[current - 1].classList.remove("pt-page-current");
-      pages[current - 1].classList.remove("pt-page-rotateCubeLeftOut");
-      pages[current - 1].classList.remove("pt-page-ontop");
-    }, 600);
-  });
+startButton.addEventListener("click", function(e) {
+  rotateCube();
 });
+
+// buttons.forEach(function(currentBtn) {
+//   currentBtn.addEventListener("click", function(e) {
+//     e.preventDefault();
+
+//     if (current >= 10) {
+//       return false;
+//     }
+
+//     // answerBtn.forEach(answer => {
+//     const checkedAnswer = document.querySelector([
+//       'input[type="radio"]:checked'
+//     ]);
+
+//     function compare(a, b) {
+//       if (a.score > b.score) return -1;
+//       if (a.score < b.score) return 1;
+//       return 0;
+//     }
+
+//     // if (answer.checked) {
+//     if (checkedAnswer.value === "a") {
+//       objIndex = finalAvenger.findIndex(obj => obj.avenger == "Iron Man");
+//       finalAvenger[objIndex].score += 1;
+//     } else if (checkedAnswer.value === "b") {
+//       objIndex = finalAvenger.findIndex(obj => obj.avenger == "Black Widow");
+//       finalAvenger[objIndex].score += 1;
+//     } else if (checkedAnswer.value === "c") {
+//       objIndex = finalAvenger.findIndex(obj => obj.avenger == "Hulk");
+//       finalAvenger[objIndex].score += 1;
+//     } else if (checkedAnswer.value === "d") {
+//       objIndex = finalAvenger.findIndex(obj => obj.avenger == "Hawkeye");
+//       finalAvenger[objIndex].score += 1;
+//     } else if (checkedAnswer.value === "e") {
+//       objIndex = finalAvenger.findIndex(
+//         obj => obj.avenger == "Captain America"
+//       );
+//       finalAvenger[objIndex].score += 1;
+//     } else if (checkedAnswer.value === "f") {
+//       objIndex = finalAvenger.findIndex(obj => obj.avenger == "Thor");
+//       finalAvenger[objIndex].score += 1;
+//     }
+
+//     finalAvenger.sort(compare);
+//     console.log(finalAvenger);
+//     let winner = finalAvenger[0];
+//     console.log(winner);
+//     // }
+//     // });
+//   });
+// });
