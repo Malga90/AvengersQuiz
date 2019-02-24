@@ -237,6 +237,33 @@ let current = 0;
 const answerBtn = document.querySelectorAll(['input[type="radio"]']);
 let points = 0;
 
+let finalAvenger = [
+  {
+    avenger: "Iron Man",
+    score: 0
+  },
+  {
+    avenger: "Black Widow",
+    score: 0
+  },
+  {
+    avenger: "Hulk",
+    score: 0
+  },
+  {
+    avenger: "Hawkeye",
+    score: 0
+  },
+  {
+    avenger: "Captain America",
+    score: 0
+  },
+  {
+    avenger: "Thor",
+    score: 0
+  }
+];
+
 buttons.forEach(function(currentBtn) {
   currentBtn.addEventListener("click", function(e) {
     e.preventDefault();
@@ -250,56 +277,40 @@ buttons.forEach(function(currentBtn) {
         'input[type="radio"]:checked'
       ]);
 
-      let finalAvenger = [
-        {
-          avenger: "Iron Man",
-          score: 0
-        },
-        {
-          avenger: "Black Widow",
-          score: 0
-        },
-        {
-          avenger: "Hulk",
-          score: 0
-        },
-        {
-          avenger: "Hawkeye",
-          score: 0
-        },
-        {
-          avenger: "Captain America",
-          score: 0
-        },
-        {
-          avenger: "Thor",
-          score: 0
-        }
-      ];
-
       function compare(a, b) {
         if (a.score > b.score) return -1;
         if (a.score < b.score) return 1;
         return 0;
       }
 
-      finalAvenger.sort(compare);
-      console.log(finalAvenger);
+      if (answer.checked) {
+        if (checkedAnswer.value === "a") {
+          objIndex = finalAvenger.findIndex(obj => obj.avenger == "Iron Man");
+          finalAvenger[objIndex].score += 1;
+        } else if (checkedAnswer.value === "b") {
+          objIndex = finalAvenger.findIndex(
+            obj => obj.avenger == "Black Widow"
+          );
+          finalAvenger[objIndex].score += 1;
+        } else if (checkedAnswer.value === "c") {
+          objIndex = finalAvenger.findIndex(obj => obj.avenger == "Hulk");
+          finalAvenger[objIndex].score += 1;
+        } else if (checkedAnswer.value === "d") {
+          objIndex = finalAvenger.findIndex(obj => obj.avenger == "Hawkeye");
+          finalAvenger[objIndex].score += 1;
+        } else if (checkedAnswer.value === "e") {
+          objIndex = finalAvenger.findIndex(
+            obj => obj.avenger == "Captain America"
+          );
+          finalAvenger[objIndex].score += 1;
+        } else if (checkedAnswer.value === "f") {
+          objIndex = finalAvenger.findIndex(obj => obj.avenger == "Thor");
+          finalAvenger[objIndex].score += 1;
+        }
 
-      // if (answer.checked && checkedAnswer.value === "a") {
-      //   points += 1;
-      // } else if (answer.checked && checkedAnswer.value === "b") {
-      //   points += 2;
-      // } else if (answer.checked && checkedAnswer.value === "c") {
-      //   points += 3;
-      // } else if (answer.checked && checkedAnswer.value === "d") {
-      //   points += 4;
-      // } else if (answer.checked && checkedAnswer.value === "e") {
-      //   points += 5;
-      // } else if (answer.checked && checkedAnswer.value === "f") {
-      //   points += 6;
-      // }
-      // console.log(points);
+        finalAvenger.sort(compare);
+      }
+      console.log(finalAvenger);
     });
 
     pages[current].classList.add("pt-page-rotateCubeLeftOut");
