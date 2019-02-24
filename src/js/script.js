@@ -1,3 +1,4 @@
+// HTML Template
 const quiz = [
   {
     question: "1. How are you spending your free time?",
@@ -228,10 +229,10 @@ function createSeries(data, idx) {
   }
 }
 
-// Variables for CSS Animation
+// Quiz
 const pages = document.querySelectorAll(".pt-page");
 const startButton = document.querySelector(".btn");
-const answerBtn = document.querySelectorAll(".btn-next");
+const nextButton = document.querySelectorAll(".btn-next");
 let current = 0;
 
 let finalAvenger = [
@@ -278,57 +279,57 @@ function rotateCube() {
   }, 600);
 }
 
+function compare(a, b) {
+  if (a.score > b.score) return -1;
+  if (a.score < b.score) return 1;
+  return 0;
+}
+
 startButton.addEventListener("click", function(e) {
+  e.preventDefault();
   rotateCube();
 });
 
-// buttons.forEach(function(currentBtn) {
-//   currentBtn.addEventListener("click", function(e) {
-//     e.preventDefault();
+nextButton.forEach(function(currentBtn) {
+  currentBtn.addEventListener("click", function(e) {
+    e.preventDefault();
 
-//     if (current >= 10) {
-//       return false;
-//     }
+    if (current >= 10) {
+      return false;
+    }
+    rotateCube();
 
-//     // answerBtn.forEach(answer => {
-//     const checkedAnswer = document.querySelector([
-//       'input[type="radio"]:checked'
-//     ]);
+    const checkedAnswer = document.querySelector([
+      'input[type="radio"]:checked'
+    ]);
 
-//     function compare(a, b) {
-//       if (a.score > b.score) return -1;
-//       if (a.score < b.score) return 1;
-//       return 0;
-//     }
+    if (checkedAnswer.value === "a") {
+      objIndex = finalAvenger.findIndex(obj => obj.avenger == "Iron Man");
+      finalAvenger[objIndex].score += 1;
+    } else if (checkedAnswer.value === "b") {
+      objIndex = finalAvenger.findIndex(obj => obj.avenger == "Black Widow");
+      finalAvenger[objIndex].score += 1;
+    } else if (checkedAnswer.value === "c") {
+      objIndex = finalAvenger.findIndex(obj => obj.avenger == "Hulk");
+      finalAvenger[objIndex].score += 1;
+    } else if (checkedAnswer.value === "d") {
+      objIndex = finalAvenger.findIndex(obj => obj.avenger == "Hawkeye");
+      finalAvenger[objIndex].score += 1;
+    } else if (checkedAnswer.value === "e") {
+      objIndex = finalAvenger.findIndex(
+        obj => obj.avenger == "Captain America"
+      );
+      finalAvenger[objIndex].score += 1;
+    } else if (checkedAnswer.value === "f") {
+      objIndex = finalAvenger.findIndex(obj => obj.avenger == "Thor");
+      finalAvenger[objIndex].score += 1;
+    } else {
+      return false;
+    }
 
-//     // if (answer.checked) {
-//     if (checkedAnswer.value === "a") {
-//       objIndex = finalAvenger.findIndex(obj => obj.avenger == "Iron Man");
-//       finalAvenger[objIndex].score += 1;
-//     } else if (checkedAnswer.value === "b") {
-//       objIndex = finalAvenger.findIndex(obj => obj.avenger == "Black Widow");
-//       finalAvenger[objIndex].score += 1;
-//     } else if (checkedAnswer.value === "c") {
-//       objIndex = finalAvenger.findIndex(obj => obj.avenger == "Hulk");
-//       finalAvenger[objIndex].score += 1;
-//     } else if (checkedAnswer.value === "d") {
-//       objIndex = finalAvenger.findIndex(obj => obj.avenger == "Hawkeye");
-//       finalAvenger[objIndex].score += 1;
-//     } else if (checkedAnswer.value === "e") {
-//       objIndex = finalAvenger.findIndex(
-//         obj => obj.avenger == "Captain America"
-//       );
-//       finalAvenger[objIndex].score += 1;
-//     } else if (checkedAnswer.value === "f") {
-//       objIndex = finalAvenger.findIndex(obj => obj.avenger == "Thor");
-//       finalAvenger[objIndex].score += 1;
-//     }
-
-//     finalAvenger.sort(compare);
-//     console.log(finalAvenger);
-//     let winner = finalAvenger[0];
-//     console.log(winner);
-//     // }
-//     // });
-//   });
-// });
+    finalAvenger.sort(compare);
+    console.log(finalAvenger);
+    let winner = finalAvenger[0];
+    console.log(winner);
+  });
+});
