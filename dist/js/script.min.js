@@ -294,14 +294,14 @@ nextButton.forEach(function(currentBtn) {
   currentBtn.addEventListener("click", function(e) {
     e.preventDefault();
 
-    if (current >= 10) {
-      return false;
-    }
-    rotateCube();
-
     const checkedAnswer = document.querySelector([
       'input[type="radio"]:checked'
     ]);
+
+    if (current >= 10 || !checkedAnswer) {
+      currentBtn.disabled = true;
+      return false;
+    }
 
     if (checkedAnswer.value === "a") {
       objIndex = finalAvenger.findIndex(obj => obj.avenger == "Iron Man");
@@ -323,9 +323,9 @@ nextButton.forEach(function(currentBtn) {
     } else if (checkedAnswer.value === "f") {
       objIndex = finalAvenger.findIndex(obj => obj.avenger == "Thor");
       finalAvenger[objIndex].score += 1;
-    } else {
-      return false;
     }
+
+    rotateCube();
 
     finalAvenger.sort(compare);
     console.log(finalAvenger);
