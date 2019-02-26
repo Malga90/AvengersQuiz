@@ -157,7 +157,7 @@ function createSeries(data, idx) {
                         </ul>
                     </div>
                     <div class="box-btn-next">
-                        <a href="#" class="btn btn-next" data-button="answerBtn">Next<span class="arrow-right">&rArr;</span></a> 
+                        <button class="btn btn-next" data-button="answerBtn">Next<span class="arrow-right">&rArr;</span></button> 
                     </div>
                 </div>
                 </div>
@@ -220,7 +220,7 @@ function createSeries(data, idx) {
                         </ul>
                     </div>
                     <div class="box-btn-next">
-                        <a href="#" class="btn btn-next" data-button="answerBtn">Next<span class="arrow-right">&rArr;</span></a> 
+                        <button class="btn btn-next" data-button="answerBtn">Next<span class="arrow-right">&rArr;</span></button> 
                     </div>
                 </div>
                 </div>
@@ -285,12 +285,17 @@ function compare(a, b) {
   return 0;
 }
 
+function clearAllRadios() {
+  const checkedAnswer = document.querySelector(['input[type="radio"]:checked']);
+  checkedAnswer.checked = false;
+}
+
 startButton.addEventListener("click", function(e) {
   e.preventDefault();
   rotateCube();
 });
 
-nextButton.forEach(function(currentBtn) {
+nextButton.forEach(currentBtn => {
   currentBtn.addEventListener("click", function(e) {
     e.preventDefault();
 
@@ -299,7 +304,6 @@ nextButton.forEach(function(currentBtn) {
     ]);
 
     if (current >= 10 || !checkedAnswer) {
-      currentBtn.disabled = true;
       return false;
     }
 
@@ -325,11 +329,16 @@ nextButton.forEach(function(currentBtn) {
       finalAvenger[objIndex].score += 1;
     }
 
-    rotateCube();
+    clearAllRadios();
+    // rotateCube();
 
     finalAvenger.sort(compare);
     console.log(finalAvenger);
     let winner = finalAvenger[0];
-    console.log(winner);
+    console.log(winner.avenger);
+
+    // finalAvenger.forEach(avenger => {
+    //   console.log(avenger);
+    // });
   });
 });
