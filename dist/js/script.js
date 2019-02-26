@@ -330,7 +330,7 @@ nextButton.forEach(currentBtn => {
     }
 
     clearAllRadios();
-    // rotateCube();
+    rotateCube();
 
     finalAvenger.sort(compare);
     console.log(finalAvenger);
