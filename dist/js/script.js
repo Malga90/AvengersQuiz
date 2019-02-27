@@ -229,6 +229,74 @@ function createSeries(data, idx) {
   }
 }
 
+// HTML Template for result
+const result = [
+  {
+    name: "Iron Man",
+    image: "src/img/a1.jpg",
+    description:
+      "Chocolate I love bonbon pie. Caramels I love donut sesame snaps toffee chocolate caramels. Toffee bonbon bear claw cookie cheesecake I love lollipop jelly muffin. Danish sesame snaps pie tart. Caramels fruitcake jelly macaroon gummi bears cake lollipop carrot cake I love. I love pastry lollipop powder sesame snaps sweet roll tootsie roll bear claw liquorice."
+  },
+  {
+    name: "Black Widow",
+    image: "src/img/a1.jpg",
+    description:
+      "Chocolate I love bonbon pie. Caramels I love donut sesame snaps toffee chocolate caramels. Toffee bonbon bear claw cookie cheesecake I love lollipop jelly muffin. Danish sesame snaps pie tart. Caramels fruitcake jelly macaroon gummi bears cake lollipop carrot cake I love. I love pastry lollipop powder sesame snaps sweet roll tootsie roll bear claw liquorice."
+  },
+  {
+    name: "Hulk",
+    image: "src/img/a1.jpg",
+    description:
+      "Chocolate I love bonbon pie. Caramels I love donut sesame snaps toffee chocolate caramels. Toffee bonbon bear claw cookie cheesecake I love lollipop jelly muffin. Danish sesame snaps pie tart. Caramels fruitcake jelly macaroon gummi bears cake lollipop carrot cake I love. I love pastry lollipop powder sesame snaps sweet roll tootsie roll bear claw liquorice."
+  },
+  {
+    name: "Hawkeye",
+    image: "src/img/a1.jpg",
+    description:
+      "Chocolate I love bonbon pie. Caramels I love donut sesame snaps toffee chocolate caramels. Toffee bonbon bear claw cookie cheesecake I love lollipop jelly muffin. Danish sesame snaps pie tart. Caramels fruitcake jelly macaroon gummi bears cake lollipop carrot cake I love. I love pastry lollipop powder sesame snaps sweet roll tootsie roll bear claw liquorice."
+  },
+  {
+    name: "Captain America",
+    image: "src/img/a1.jpg",
+    description:
+      "Chocolate I love bonbon pie. Caramels I love donut sesame snaps toffee chocolate caramels. Toffee bonbon bear claw cookie cheesecake I love lollipop jelly muffin. Danish sesame snaps pie tart. Caramels fruitcake jelly macaroon gummi bears cake lollipop carrot cake I love. I love pastry lollipop powder sesame snaps sweet roll tootsie roll bear claw liquorice."
+  },
+  {
+    name: "Thor",
+    image: "src/img/a1.jpg",
+    description:
+      "Chocolate I love bonbon pie. Caramels I love donut sesame snaps toffee chocolate caramels. Toffee bonbon bear claw cookie cheesecake I love lollipop jelly muffin. Danish sesame snaps pie tart. Caramels fruitcake jelly macaroon gummi bears cake lollipop carrot cake I love. I love pastry lollipop powder sesame snaps sweet roll tootsie roll bear claw liquorice."
+  }
+];
+
+function createSeries(data, idx) {
+  return;
+  `<div class="row">
+        <div class="column">
+          <div class="image-column">
+            <div class="image-box">
+              <img src="src/img/a1.jpg" alt="Avengers" class="image" />
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="outcome-column">
+            <h2 class="heading-secondary">
+              You are... IRON MAN!
+            </h2>
+            <div class="outcome-text">
+              Chocolate I love bonbon pie. Caramels I love donut sesame snaps
+              toffee chocolate caramels. Toffee bonbon bear claw cookie
+              cheesecake I love lollipop jelly muffin. Danish sesame snaps pie
+              tart. Caramels fruitcake jelly macaroon gummi bears cake
+              lollipop carrot cake I love. I love pastry lollipop powder
+              sesame snaps sweet roll tootsie roll bear claw liquorice.
+            </div>
+          </div>
+        </div>
+      </div>`;
+}
+
 // Quiz
 const pages = document.querySelectorAll(".pt-page");
 const startButton = document.querySelector(".btn");
@@ -303,7 +371,7 @@ nextButton.forEach(currentBtn => {
       'input[type="radio"]:checked'
     ]);
 
-    if (current >= 10 || !checkedAnswer) {
+    if (!checkedAnswer) {
       return false;
     }
 
@@ -337,8 +405,8 @@ nextButton.forEach(currentBtn => {
     let winner = finalAvenger[0];
     console.log(winner.avenger);
 
-    // finalAvenger.forEach(avenger => {
-    //   console.log(avenger);
-    // });
+    if (current >= 10 && winner.avenger === "Thor") {
+      console.log("you are fucking Thor!!!");
+    }
   });
 });
