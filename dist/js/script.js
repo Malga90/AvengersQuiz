@@ -157,7 +157,7 @@ function createSeries(data, idx) {
                         </ul>
                     </div>
                     <div class="box-btn-next">
-                        <button class="btn btn-next" data-button="answerBtn">Next<span class="arrow-right">&rArr;</span></button> 
+                        <button class="btn btn-next" data-button="answerBtn">Next<span class="arrow-right">&rArr;</span></button>
                     </div>
                 </div>
                 </div>
@@ -220,7 +220,7 @@ function createSeries(data, idx) {
                         </ul>
                     </div>
                     <div class="box-btn-next">
-                        <button class="btn btn-next" data-button="answerBtn">Next<span class="arrow-right">&rArr;</span></button> 
+                        <button class="btn btn-next" data-button="answerBtn">Next<span class="arrow-right">&rArr;</span></button>
                     </div>
                 </div>
                 </div>
@@ -269,28 +269,34 @@ const result = [
   }
 ];
 
-function createSeries(data, idx) {
+function finalAnswer() {
+  const markup = createSeriesResult(data);
+  const section = document.createElement("section");
+  const container = document.querySelector("#pt-main");
+
+  section.classList.add("outcome");
+  section.classList.add("pt-page");
+  section.innerHTML = markup;
+  container.appendChild(section);
+}
+
+function createSeriesResult(data) {
   return;
   `<div class="row">
         <div class="column">
           <div class="image-column">
             <div class="image-box">
-              <img src="src/img/a1.jpg" alt="Avengers" class="image" />
+              <img src="${data.image}" alt="Avengers" class="image" />
             </div>
           </div>
         </div>
         <div class="column">
           <div class="outcome-column">
             <h2 class="heading-secondary">
-              You are... IRON MAN!
+              You are ${data.name}
             </h2>
             <div class="outcome-text">
-              Chocolate I love bonbon pie. Caramels I love donut sesame snaps
-              toffee chocolate caramels. Toffee bonbon bear claw cookie
-              cheesecake I love lollipop jelly muffin. Danish sesame snaps pie
-              tart. Caramels fruitcake jelly macaroon gummi bears cake
-              lollipop carrot cake I love. I love pastry lollipop powder
-              sesame snaps sweet roll tootsie roll bear claw liquorice.
+              ${data.description}
             </div>
           </div>
         </div>
@@ -371,6 +377,8 @@ nextButton.forEach(currentBtn => {
       'input[type="radio"]:checked'
     ]);
 
+    let resultAvenger;
+
     if (!checkedAnswer) {
       return false;
     }
@@ -405,8 +413,20 @@ nextButton.forEach(currentBtn => {
     let winner = finalAvenger[0];
     console.log(winner.avenger);
 
-    if (current >= 10 && winner.avenger === "Thor") {
-      console.log("you are fucking Thor!!!");
+    if (current >= 10 && winner.avenger === "Iron Man") {
+      resultAvenger = result.findIndex(obj => obj.name === "Iron Man");
+    } else if (current >= 10 && winner.avenger === "Black Widow") {
+      resultAvenger = result.findIndex(obj => obj.name === "Black Widow");
+    } else if (current >= 10 && winner.avenger === "Hulk") {
+      resultAvenger = result.findIndex(obj => obj.name === "Hulk");
+    } else if (current >= 10 && winner.avenger === "Hawkeye") {
+      resultAvenger = result.findIndex(obj => obj.name === "Hawkeye");
+    } else if (current >= 10 && winner.avenger === "Captain America") {
+      resultAvenger = result.findIndex(obj => obj.name === "Captain America");
+    } else if (current >= 10 && winner.avenger === "Thor") {
+      resultAvenger = result.findIndex(obj => obj.name === "Thor");
     }
+
+    createSeriesResult(resultAvenger);
   });
 });
