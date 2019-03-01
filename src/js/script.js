@@ -269,38 +269,38 @@ const result = [
   }
 ];
 
-function finalAnswer() {
-  const markup = createSeriesResult(data);
+function finalAnswer(data) {
+  const markup = `<div class="row">
+                    <div class="column">
+                      <div class="image-column">
+                        <div class="image-box">
+                          <img src="${
+                            data.image
+                          }" alt="Avengers" class="image" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="column">
+                      <div class="outcome-column">
+                        <h2 class="heading-secondary">
+                          You are ${data.name}
+                        </h2>
+                        <div class="outcome-text">
+                          ${data.description}
+                        </div>
+                      </div>
+                    </div>
+                </div>`;
   const section = document.createElement("section");
   const container = document.querySelector("#pt-main");
 
   section.classList.add("outcome");
   section.classList.add("pt-page");
+  section.classList.add("pt-page-current");
+  section.classList.add("pt-page-rotateCubeLeftIn");
   section.innerHTML = markup;
   container.appendChild(section);
-}
-
-function createSeriesResult(data) {
-  return;
-  `<div class="row">
-        <div class="column">
-          <div class="image-column">
-            <div class="image-box">
-              <img src="${data.image}" alt="Avengers" class="image" />
-            </div>
-          </div>
-        </div>
-        <div class="column">
-          <div class="outcome-column">
-            <h2 class="heading-secondary">
-              You are ${data.name}
-            </h2>
-            <div class="outcome-text">
-              ${data.description}
-            </div>
-          </div>
-        </div>
-      </div>`;
+  return markup;
 }
 
 // Quiz
@@ -344,6 +344,7 @@ function rotateCube() {
   pages[current + 1].classList.add("pt-page-current");
 
   current++;
+  console.log(current);
 
   setTimeout(() => {
     pages[current].classList.remove("pt-page-rotateCubeLeftIn");
@@ -351,17 +352,13 @@ function rotateCube() {
     pages[current - 1].classList.remove("pt-page-rotateCubeLeftOut");
     pages[current - 1].classList.remove("pt-page-ontop");
   }, 600);
+  console.log(current);
 }
 
 function compare(a, b) {
   if (a.score > b.score) return -1;
   if (a.score < b.score) return 1;
   return 0;
-}
-
-function clearAllRadios() {
-  const checkedAnswer = document.querySelector(['input[type="radio"]:checked']);
-  checkedAnswer.checked = false;
 }
 
 startButton.addEventListener("click", function(e) {
@@ -405,28 +402,33 @@ nextButton.forEach(currentBtn => {
       finalAvenger[objIndex].score += 1;
     }
 
-    clearAllRadios();
-    rotateCube();
+    checkedAnswer.checked = false;
 
-    finalAvenger.sort(compare);
-    console.log(finalAvenger);
     let winner = finalAvenger[0];
-    console.log(winner.avenger);
 
     if (current >= 10 && winner.avenger === "Iron Man") {
       resultAvenger = result.findIndex(obj => obj.name === "Iron Man");
+      finalAnswer(result[resultAvenger]);
     } else if (current >= 10 && winner.avenger === "Black Widow") {
       resultAvenger = result.findIndex(obj => obj.name === "Black Widow");
+      finalAnswer(result[resultAvenger]);
     } else if (current >= 10 && winner.avenger === "Hulk") {
       resultAvenger = result.findIndex(obj => obj.name === "Hulk");
+      finalAnswer(result[resultAvenger]);
     } else if (current >= 10 && winner.avenger === "Hawkeye") {
       resultAvenger = result.findIndex(obj => obj.name === "Hawkeye");
+      finalAnswer(result[resultAvenger]);
     } else if (current >= 10 && winner.avenger === "Captain America") {
       resultAvenger = result.findIndex(obj => obj.name === "Captain America");
+      finalAnswer(result[resultAvenger]);
     } else if (current >= 10 && winner.avenger === "Thor") {
       resultAvenger = result.findIndex(obj => obj.name === "Thor");
+      finalAnswer(result[resultAvenger]);
     }
 
-    createSeriesResult(resultAvenger);
+    finalAvenger.sort(compare);
+    console.log(finalAvenger);
+
+    rotateCube();
   });
 });
