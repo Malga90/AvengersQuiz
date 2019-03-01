@@ -234,36 +234,42 @@ const result = [
   {
     name: "Iron Man",
     image: "src/img/a1.jpg",
+    backgroundColor: "background-color: #ff898b",
     description:
       "Chocolate I love bonbon pie. Caramels I love donut sesame snaps toffee chocolate caramels. Toffee bonbon bear claw cookie cheesecake I love lollipop jelly muffin. Danish sesame snaps pie tart. Caramels fruitcake jelly macaroon gummi bears cake lollipop carrot cake I love. I love pastry lollipop powder sesame snaps sweet roll tootsie roll bear claw liquorice."
   },
   {
     name: "Black Widow",
-    image: "src/img/a1.jpg",
+    image: "src/img/a2.jpg",
+    backgroundColor: "background-color: #CCB5E0;",
     description:
       "Chocolate I love bonbon pie. Caramels I love donut sesame snaps toffee chocolate caramels. Toffee bonbon bear claw cookie cheesecake I love lollipop jelly muffin. Danish sesame snaps pie tart. Caramels fruitcake jelly macaroon gummi bears cake lollipop carrot cake I love. I love pastry lollipop powder sesame snaps sweet roll tootsie roll bear claw liquorice."
   },
   {
     name: "Hulk",
-    image: "src/img/a1.jpg",
+    image: "src/img/a3.jpg",
+    backgroundColor: "background-color: #ACDDB5;",
     description:
       "Chocolate I love bonbon pie. Caramels I love donut sesame snaps toffee chocolate caramels. Toffee bonbon bear claw cookie cheesecake I love lollipop jelly muffin. Danish sesame snaps pie tart. Caramels fruitcake jelly macaroon gummi bears cake lollipop carrot cake I love. I love pastry lollipop powder sesame snaps sweet roll tootsie roll bear claw liquorice."
   },
   {
     name: "Hawkeye",
-    image: "src/img/a1.jpg",
+    image: "src/img/a4.jpg",
+    backgroundColor: "background-color: #EDCFEA;",
     description:
       "Chocolate I love bonbon pie. Caramels I love donut sesame snaps toffee chocolate caramels. Toffee bonbon bear claw cookie cheesecake I love lollipop jelly muffin. Danish sesame snaps pie tart. Caramels fruitcake jelly macaroon gummi bears cake lollipop carrot cake I love. I love pastry lollipop powder sesame snaps sweet roll tootsie roll bear claw liquorice."
   },
   {
     name: "Captain America",
-    image: "src/img/a1.jpg",
+    image: "src/img/a5.jpg",
+    backgroundColor: "background-color: #A2C3D4;",
     description:
       "Chocolate I love bonbon pie. Caramels I love donut sesame snaps toffee chocolate caramels. Toffee bonbon bear claw cookie cheesecake I love lollipop jelly muffin. Danish sesame snaps pie tart. Caramels fruitcake jelly macaroon gummi bears cake lollipop carrot cake I love. I love pastry lollipop powder sesame snaps sweet roll tootsie roll bear claw liquorice."
   },
   {
     name: "Thor",
-    image: "src/img/a1.jpg",
+    image: "src/img/a6.jpg",
+    backgroundColor: "background-color: #C6DEA2;",
     description:
       "Chocolate I love bonbon pie. Caramels I love donut sesame snaps toffee chocolate caramels. Toffee bonbon bear claw cookie cheesecake I love lollipop jelly muffin. Danish sesame snaps pie tart. Caramels fruitcake jelly macaroon gummi bears cake lollipop carrot cake I love. I love pastry lollipop powder sesame snaps sweet roll tootsie roll bear claw liquorice."
   }
@@ -280,10 +286,10 @@ function finalAnswer(data) {
                         </div>
                       </div>
                     </div>
-                    <div class="column">
+                    <div class="column" style="${data.backgroundColor}">
                       <div class="outcome-column">
                         <h2 class="heading-secondary">
-                          You are ${data.name}
+                          You are ${data.name}!
                         </h2>
                         <div class="outcome-text">
                           ${data.description}
@@ -344,7 +350,6 @@ function rotateCube() {
   pages[current + 1].classList.add("pt-page-current");
 
   current++;
-  console.log(current);
 
   setTimeout(() => {
     pages[current].classList.remove("pt-page-rotateCubeLeftIn");
@@ -352,7 +357,6 @@ function rotateCube() {
     pages[current - 1].classList.remove("pt-page-rotateCubeLeftOut");
     pages[current - 1].classList.remove("pt-page-ontop");
   }, 600);
-  console.log(current);
 }
 
 function compare(a, b) {
@@ -374,6 +378,7 @@ nextButton.forEach(currentBtn => {
       'input[type="radio"]:checked'
     ]);
 
+    let winner = finalAvenger[0];
     let resultAvenger;
 
     if (!checkedAnswer) {
@@ -404,8 +409,6 @@ nextButton.forEach(currentBtn => {
 
     checkedAnswer.checked = false;
 
-    let winner = finalAvenger[0];
-
     if (current >= 10 && winner.avenger === "Iron Man") {
       resultAvenger = result.findIndex(obj => obj.name === "Iron Man");
       finalAnswer(result[resultAvenger]);
@@ -427,7 +430,6 @@ nextButton.forEach(currentBtn => {
     }
 
     finalAvenger.sort(compare);
-    console.log(finalAvenger);
 
     rotateCube();
   });
