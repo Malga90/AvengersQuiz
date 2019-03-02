@@ -294,6 +294,9 @@ function finalAnswer(data) {
                         <div class="outcome-text">
                           ${data.description}
                         </div>
+                        <div class="box-btn-last">
+                          <button class="btn-last">Play again!</button>
+                        </div>
                       </div>
                     </div>
                 </div>`;
