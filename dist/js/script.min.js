@@ -1,4 +1,4 @@
-// HTML Template
+// HTML Template for questions
 const quiz = [
   {
     question: "1. How are you spending your free time?",
@@ -125,39 +125,39 @@ function createSeries(data, idx) {
                         </h2>
                         <ul class="answers__list">
                             <label>
-                                <input type="radio" name="one" value="a"><li class="answers__list-item">${
+                                <input type="radio" value="a"><li class="answers__list-item">${
                                   data.answer1
                                 }</li>
                             </label>
                             <label>
-                                <input type="radio" name="one" value="b"><li class="answers__list-item">${
+                                <input type="radio" value="b"><li class="answers__list-item">${
                                   data.answer2
                                 }</li>
                             </label>
                             <label>
-                                <input type="radio" name="one" value="c"><li class="answers__list-item">${
+                                <input type="radio" value="c"><li class="answers__list-item">${
                                   data.answer3
                                 }</li>
                             </label>
                             <label>
-                                <input type="radio" name="one" value="d"><li class="answers__list-item">${
+                                <input type="radio" value="d"><li class="answers__list-item">${
                                   data.answer4
                                 }</li>
                             </label>
                             <label>
-                                <input type="radio" name="one" value="e"><li class="answers__list-item">${
+                                <input type="radio" value="e"><li class="answers__list-item">${
                                   data.answer5
                                 }</li>
                             </label>
                             <label>
-                                <input type="radio" name="one" value="f"><li class="answers__list-item">${
+                                <input type="radio" value="f"><li class="answers__list-item">${
                                   data.answer6
                                 }</li>
                             </label>
                         </ul>
                     </div>
                     <div class="box-btn-next">
-                        <button class="btn btn-next" data-button="answerBtn">Next<span class="arrow-right">&rArr;</span></button>
+                        <button class="btn btn-next">Next<span class="arrow-right">&rArr;</span></button>
                     </div>
                 </div>
                 </div>
@@ -188,39 +188,39 @@ function createSeries(data, idx) {
                         </h2>
                         <ul class="answers__list">
                             <label>
-                                <input type="radio" name="one" value="a"><li class="answers__list-item">${
+                                <input type="radio" value="a"><li class="answers__list-item">${
                                   data.answer1
                                 }</li>
                             </label>
                             <label>
-                                <input type="radio" name="one" value="b"><li class="answers__list-item">${
+                                <input type="radio" value="b"><li class="answers__list-item">${
                                   data.answer2
                                 }</li>
                             </label>
                             <label>
-                                <input type="radio" name="one" value="c"><li class="answers__list-item">${
+                                <input type="radio" value="c"><li class="answers__list-item">${
                                   data.answer3
                                 }</li>
                             </label>
                             <label>
-                                <input type="radio" name="one" value="d"><li class="answers__list-item">${
+                                <input type="radio" value="d"><li class="answers__list-item">${
                                   data.answer4
                                 }</li>
                             </label>
                             <label>
-                                <input type="radio" name="one" value="e"><li class="answers__list-item">${
+                                <input type="radio" value="e"><li class="answers__list-item">${
                                   data.answer5
                                 }</li>
                             </label>
                             <label>
-                                <input type="radio" name="one" value="f"><li class="answers__list-item">${
+                                <input type="radio" value="f"><li class="answers__list-item">${
                                   data.answer6
                                 }</li>
                             </label>
                         </ul>
                     </div>
                     <div class="box-btn-next">
-                        <button class="btn btn-next" data-button="answerBtn">Next<span class="arrow-right">&rArr;</span></button>
+                        <button class="btn btn-next">Next<span class="arrow-right">&rArr;</span></button>
                     </div>
                 </div>
                 </div>
@@ -295,7 +295,7 @@ function finalAnswer(data) {
                           ${data.description}
                         </div>
                         <div class="box-btn-last">
-                          <button class="btn-last">Play again!</button>
+                          <button class="btn btn-last">Play again!</button>
                         </div>
                       </div>
                     </div>
@@ -316,6 +316,7 @@ function finalAnswer(data) {
 const pages = document.querySelectorAll(".pt-page");
 const startButton = document.querySelector(".btn");
 const nextButton = document.querySelectorAll(".btn-next");
+const playAgainButton = document.querySelector(".btn-last");
 let current = 0;
 
 let finalAvenger = [
@@ -359,7 +360,7 @@ function rotateCube() {
     pages[current - 1].classList.remove("pt-page-current");
     pages[current - 1].classList.remove("pt-page-rotateCubeLeftOut");
     pages[current - 1].classList.remove("pt-page-ontop");
-  }, 600);
+  }, 1600);
 }
 
 function compare(a, b) {
@@ -433,7 +434,6 @@ nextButton.forEach(currentBtn => {
     }
 
     finalAvenger.sort(compare);
-
     rotateCube();
   });
 });
