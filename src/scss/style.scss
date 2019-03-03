@@ -1,5 +1,13 @@
 // Variables
+$heading-color: #b2c8e5;
+$inputs-color: #e0e0e2;
 $button-color: #01153a;
+$question-column-color: #568cb5;
+$button-last-color: #332f30;
+
+$image-background1: #91aabd;
+$image-background2: #272727;
+$image-background3: #31373d;
 
 // Mixins
 @mixin respond($breakpoint) {
@@ -62,7 +70,7 @@ body {
 
 // Headings
 .heading-primary {
-  color: #b2c8e5;
+  color: $heading-color;
   font-size: 7.5rem;
 }
 
@@ -73,7 +81,7 @@ body {
 
 .question-heading {
   font-size: 3rem;
-  color: #01153a;
+  color: $button-color;
   margin-bottom: 8%;
   line-height: 5rem;
 }
@@ -82,11 +90,11 @@ body {
 .btn {
   text-decoration: none;
   cursor: pointer;
-  border: 3px solid #b2c8e5;
+  border: 3px solid $heading-color;
   border-radius: 8px;
   outline: none;
   overflow: hidden;
-  color: #b2c8e5;
+  color: $heading-color;
   background: $button-color;
   transition: all 0.4s ease-out;
   text-align: center;
@@ -96,30 +104,30 @@ body {
   &:hover {
     color: $button-color;
     border: 3px solid $button-color;
-    background: #b2c8e5;
+    background: $heading-color;
     @include animation(shakeThatBooty 0.3s linear 1);
   }
 }
 
 .btn-next {
-  color: #b2c8e5;
+  color: $heading-color;
   border: 2px solid #b2c8e5;
-  background: #01153a;
+  background: $button-color;
   padding: 2% 4%;
   align-self: flex-start;
 }
 
 .btn-last {
-  color: #332f30;
-  border: 3px solid #332f30;
-  background: #e0e0e2;
+  color: $button-last-color;
+  border: 3px solid $button-last-color;
+  background: $inputs-color;
   font-family: "Poppins", sans-serif;
   padding: 3% 6%;
 
   &:hover {
-    color: #e0e0e2;
-    border: 3px solid #e0e0e2;
-    background: #332f30;
+    color: $inputs-color;
+    border: 3px solid $inputs-color;
+    background: $button-last-color;
     @include animation(shakeThatBooty 0.3s linear 1);
   }
 }
@@ -159,16 +167,13 @@ body {
 }
 
 // Section questions
-.section__question {
-}
-
 .question-column {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #568cb5;
+  background-color: $question-column-color;
   padding: 15%;
 }
 
@@ -179,7 +184,7 @@ body {
     font-size: 2.3rem;
     margin-right: -10rem;
     line-height: 2.5;
-    color: #e0e0e2;
+    color: $inputs-color;
   }
 }
 
@@ -211,15 +216,15 @@ label {
 }
 
 .backgroundColor-0 {
-  background-color: #91aabd;
+  background-color: $image-background1;
 }
 
 .backgroundColor-8 {
-  background: #272727;
+  background: $image-background2;
 }
 
 .backgroundColor-9 {
-  background: #31373d;
+  background: $image-background3;
 }
 
 .image-box {
@@ -238,7 +243,7 @@ label {
   align-self: center;
   margin-top: 22%;
   width: 65%;
-  color: #332f30;
+  color: $button-last-color;
 }
 
 .outcome-text {
