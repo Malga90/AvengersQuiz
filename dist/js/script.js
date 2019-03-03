@@ -155,17 +155,17 @@ function createSeries(data, idx) {
                                 }</li>
                             </label>
                         </ul>
+                        <div class="box-btn-next">
+                          <button class="btn btn-next">Next<span class="arrow-right">&rArr;</span></button>
+                        </div>
                     </div>
-                    <div class="box-btn-next">
-                        <button class="btn btn-next">Next<span class="arrow-right">&rArr;</span></button>
-                    </div>
-                </div>
+                  </div>
                 </div>
                 <div class='column'>
                 <div class='image-column'>
-                    <div class="image-box">
+                    <div class='image-box'> 
                         <img src="${data.image}" alt="Avengers" class="image">
-                    </div>
+                    </div>            
                 </div>
                 </div>
         </div>
@@ -175,9 +175,9 @@ function createSeries(data, idx) {
             <div class='row'>
                 <div class='column'>
                 <div class='image-column'>
-                    <div class="image-box">
+                    <div class='image-box'> 
                         <img src="${data.image}" alt="Avengers" class="image">
-                    </div>
+                    </div>            
                 </div>
                 </div>
                 <div class='column'>
@@ -218,11 +218,11 @@ function createSeries(data, idx) {
                                 }</li>
                             </label>
                         </ul>
+                        <div class="box-btn-next">
+                          <button class="btn btn-next">Next<span class="arrow-right">&rArr;</span></button>
+                        </div>
                     </div>
-                    <div class="box-btn-next">
-                        <button class="btn btn-next">Next<span class="arrow-right">&rArr;</span></button>
-                    </div>
-                </div>
+                  </div>
                 </div>
             </div>
         `;
