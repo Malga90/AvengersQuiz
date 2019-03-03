@@ -140,6 +140,15 @@ label {
   align-items: center;
   flex-wrap: wrap; }
 
+.backgroundColor-0 {
+  background-color: #91aabd; }
+
+.backgroundColor-8 {
+  background: #272727; }
+
+.backgroundColor-9 {
+  background: #31373d; }
+
 .image-box {
   min-width: 0; }
 

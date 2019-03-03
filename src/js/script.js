@@ -125,48 +125,48 @@ function createSeries(data, idx) {
                         </h2>
                         <ul class="answers__list">
                             <label>
-                                <input type="radio" value="a"><li class="answers__list-item">${
+                                <input type="radio" name="one" value="a"><li class="answers__list-item">${
                                   data.answer1
                                 }</li>
                             </label>
                             <label>
-                                <input type="radio" value="b"><li class="answers__list-item">${
+                                <input type="radio" name="one" value="b"><li class="answers__list-item">${
                                   data.answer2
                                 }</li>
                             </label>
                             <label>
-                                <input type="radio" value="c"><li class="answers__list-item">${
+                                <input type="radio" name="one" value="c"><li class="answers__list-item">${
                                   data.answer3
                                 }</li>
                             </label>
                             <label>
-                                <input type="radio" value="d"><li class="answers__list-item">${
+                                <input type="radio" name="one" value="d"><li class="answers__list-item">${
                                   data.answer4
                                 }</li>
                             </label>
                             <label>
-                                <input type="radio" value="e"><li class="answers__list-item">${
+                                <input type="radio" name="one" value="e"><li class="answers__list-item">${
                                   data.answer5
                                 }</li>
                             </label>
                             <label>
-                                <input type="radio" value="f"><li class="answers__list-item">${
+                                <input type="radio" name="one" value="f"><li class="answers__list-item">${
                                   data.answer6
                                 }</li>
                             </label>
                         </ul>
                         <div class="box-btn-next">
-                          <button class="btn btn-next">Next<span class="arrow-right">&rArr;</span></button>
+                          <button class="btn btn-next" >Next<span class="arrow-right">&rArr;</span></button>
                         </div>
                     </div>
                   </div>
                 </div>
                 <div class='column'>
-                <div class='image-column'>
-                    <div class='image-box'> 
-                        <img src="${data.image}" alt="Avengers" class="image">
-                    </div>            
-                </div>
+                  <div class='image-column backgroundColor-${idx}'>
+                      <div class='image-box'> 
+                          <img src="${data.image}" alt="Avengers" class="image">
+                      </div>            
+                  </div>
                 </div>
         </div>
         `;
@@ -174,7 +174,7 @@ function createSeries(data, idx) {
     return `
             <div class='row'>
                 <div class='column'>
-                <div class='image-column'>
+                <div class='image-column backgroundColor-${idx}'>
                     <div class='image-box'> 
                         <img src="${data.image}" alt="Avengers" class="image">
                     </div>            
@@ -188,32 +188,32 @@ function createSeries(data, idx) {
                         </h2>
                         <ul class="answers__list">
                             <label>
-                                <input type="radio" value="a"><li class="answers__list-item">${
+                                <input type="radio" name="one" value="a"><li class="answers__list-item">${
                                   data.answer1
                                 }</li>
                             </label>
                             <label>
-                                <input type="radio" value="b"><li class="answers__list-item">${
+                                <input type="radio" name="one" value="b"><li class="answers__list-item">${
                                   data.answer2
                                 }</li>
                             </label>
                             <label>
-                                <input type="radio" value="c"><li class="answers__list-item">${
+                                <input type="radio" name="one" value="c"><li class="answers__list-item">${
                                   data.answer3
                                 }</li>
                             </label>
                             <label>
-                                <input type="radio" value="d"><li class="answers__list-item">${
+                                <input type="radio" name="one" value="d"><li class="answers__list-item">${
                                   data.answer4
                                 }</li>
                             </label>
                             <label>
-                                <input type="radio" value="e"><li class="answers__list-item">${
+                                <input type="radio" name="one" value="e"><li class="answers__list-item">${
                                   data.answer5
                                 }</li>
                             </label>
                             <label>
-                                <input type="radio" value="f"><li class="answers__list-item">${
+                                <input type="radio" name="one" value="f"><li class="answers__list-item">${
                                   data.answer6
                                 }</li>
                             </label>
@@ -360,7 +360,7 @@ function rotateCube() {
     pages[current - 1].classList.remove("pt-page-current");
     pages[current - 1].classList.remove("pt-page-rotateCubeLeftOut");
     pages[current - 1].classList.remove("pt-page-ontop");
-  }, 1600);
+  }, 600);
 }
 
 function compare(a, b) {
@@ -412,6 +412,7 @@ nextButton.forEach(currentBtn => {
     }
 
     checkedAnswer.checked = false;
+    // rotateCube();
 
     if (current >= 10 && winner.avenger === "Iron Man") {
       resultAvenger = result.findIndex(obj => obj.name === "Iron Man");
