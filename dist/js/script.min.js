@@ -69,36 +69,6 @@ const quiz = [
     answer5: "Gym",
     answer6: "Partyyy!",
     image: "src/img/7.jpg"
-  },
-  {
-    question: "8. How are you spending your free time?",
-    answer1: "Building something",
-    answer2: "Choosing black outfits",
-    answer3: "Smashing things and people",
-    answer4: "Quality time with my family",
-    answer5: "Gym",
-    answer6: "Partyyy!",
-    image: "src/img/8.jpg"
-  },
-  {
-    question: "9. How are you spending your free time?",
-    answer1: "Building something",
-    answer2: "Choosing black outfits",
-    answer3: "Smashing things and people",
-    answer4: "Quality time with my family",
-    answer5: "Gym",
-    answer6: "Partyyy!",
-    image: "src/img/9.jpg"
-  },
-  {
-    question: "10. How are you spending your free time?",
-    answer1: "Building something",
-    answer2: "Choosing black outfits",
-    answer3: "Smashing things and people",
-    answer4: "Quality time with my family",
-    answer5: "Gym",
-    answer6: "Partyyy!",
-    image: "src/img/10.jpg"
   }
 ];
 
@@ -390,16 +360,16 @@ nextButton.forEach(currentBtn => {
     }
 
     if (checkedAnswer.value === "a") {
-      objIndex = finalAvenger.findIndex(obj => obj.avenger == "Iron Man");
+      objIndex = finalAvenger.findIndex(obj => obj.avenger === "Iron Man");
       finalAvenger[objIndex].score += 1;
     } else if (checkedAnswer.value === "b") {
-      objIndex = finalAvenger.findIndex(obj => obj.avenger == "Black Widow");
+      objIndex = finalAvenger.findIndex(obj => obj.avenger === "Black Widow");
       finalAvenger[objIndex].score += 1;
     } else if (checkedAnswer.value === "c") {
-      objIndex = finalAvenger.findIndex(obj => obj.avenger == "Hulk");
+      objIndex = finalAvenger.findIndex(obj => obj.avenger === "Hulk");
       finalAvenger[objIndex].score += 1;
     } else if (checkedAnswer.value === "d") {
-      objIndex = finalAvenger.findIndex(obj => obj.avenger == "Hawkeye");
+      objIndex = finalAvenger.findIndex(obj => obj.avenger === "Hawkeye");
       finalAvenger[objIndex].score += 1;
     } else if (checkedAnswer.value === "e") {
       objIndex = finalAvenger.findIndex(
@@ -407,29 +377,28 @@ nextButton.forEach(currentBtn => {
       );
       finalAvenger[objIndex].score += 1;
     } else if (checkedAnswer.value === "f") {
-      objIndex = finalAvenger.findIndex(obj => obj.avenger == "Thor");
+      objIndex = finalAvenger.findIndex(obj => obj.avenger === "Thor");
       finalAvenger[objIndex].score += 1;
     }
 
     checkedAnswer.checked = false;
-    // rotateCube();
 
-    if (current >= 10 && winner.avenger === "Iron Man") {
+    if (current >= 7 && winner.avenger === "Iron Man") {
       resultAvenger = result.findIndex(obj => obj.name === "Iron Man");
       finalAnswer(result[resultAvenger]);
-    } else if (current >= 10 && winner.avenger === "Black Widow") {
+    } else if (current >= 7 && winner.avenger === "Black Widow") {
       resultAvenger = result.findIndex(obj => obj.name === "Black Widow");
       finalAnswer(result[resultAvenger]);
-    } else if (current >= 10 && winner.avenger === "Hulk") {
+    } else if (current >= 7 && winner.avenger === "Hulk") {
       resultAvenger = result.findIndex(obj => obj.name === "Hulk");
       finalAnswer(result[resultAvenger]);
-    } else if (current >= 10 && winner.avenger === "Hawkeye") {
+    } else if (current >= 7 && winner.avenger === "Hawkeye") {
       resultAvenger = result.findIndex(obj => obj.name === "Hawkeye");
       finalAnswer(result[resultAvenger]);
-    } else if (current >= 10 && winner.avenger === "Captain America") {
+    } else if (current >= 7 && winner.avenger === "Captain America") {
       resultAvenger = result.findIndex(obj => obj.name === "Captain America");
       finalAnswer(result[resultAvenger]);
-    } else if (current >= 10 && winner.avenger === "Thor") {
+    } else if (current >= 7 && winner.avenger === "Thor") {
       resultAvenger = result.findIndex(obj => obj.name === "Thor");
       finalAnswer(result[resultAvenger]);
     }

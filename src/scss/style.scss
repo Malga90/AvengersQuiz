@@ -219,11 +219,11 @@ label {
   background-color: $image-background1;
 }
 
-.backgroundColor-8 {
+.backgroundColor-5 {
   background: $image-background2;
 }
 
-.backgroundColor-9 {
+.backgroundColor-6 {
   background: $image-background3;
 }
 
@@ -240,10 +240,11 @@ label {
 // Section outcome
 
 .outcome-column {
-  align-self: center;
-  margin-top: 22%;
-  width: 65%;
   color: $button-last-color;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 17%;
 }
 
 .outcome-text {
@@ -252,7 +253,7 @@ label {
 }
 
 .box-btn-last {
-  margin-top: 30%;
+  margin-top: 20%;
   display: flex;
   justify-content: center;
 }
