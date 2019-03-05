@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/Malga90/AvengersQuiz#readme",
   "devDependencies": {
+    "css-loader": "^2.1.0",
+    "style-loader": "^0.23.1",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.2.3"
   },
