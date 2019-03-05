@@ -72,7 +72,7 @@ const quiz = [
   }
 ];
 
-quiz.forEach((data, idx) => {
+const renderQuestions = quiz.forEach((data, idx) => {
   const markup = createSeries(data, idx);
   const section = document.createElement("section");
   const container = document.querySelector("#pt-main");
@@ -341,6 +341,7 @@ function compare(a, b) {
 
 startButton.addEventListener("click", function(e) {
   e.preventDefault();
+  renderQuestions;
   rotateCube();
 });
 
