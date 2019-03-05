@@ -1,24 +1,28 @@
 {
-  "name": "avengers",
+  "name": "AvengersQuiz",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Malga90/AvengersQuiz.git"
+  },
+  "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Malga90/AvengersQuiz/issues"
+  },
+  "homepage": "https://github.com/Malga90/AvengersQuiz#readme",
   "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-clean-css": "^3.10.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-imagemin": "^4.1.0",
-    "gulp-rename": "^1.4.0",
-    "gulp-sass": "^4.0.2",
-    "gulp-uglify": "^3.0.1",
-    "pump": "^3.0.0"
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.2.3"
   },
   "dependencies": {
-    "in-view": "^0.6.1"
-  },
-  "description": ""
+    "lodash": "^4.17.11"
+  }
 }

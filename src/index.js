@@ -1,4 +1,17 @@
+import _ from "lodash";
+
+function component() {
+  let element = document.createElement("div");
+
+  element.innerHTML = _.join(["Hello", "webpack"], " ");
+
+  return element;
+}
+
+document.body.appendChild(component());
+
 // HTML Template for questions
+
 const quiz = [
   {
     question: "1. How are you spending your free time?",
@@ -133,9 +146,9 @@ function createSeries(data, idx) {
                 </div>
                 <div class='column'>
                   <div class='image-column backgroundColor-${idx}'>
-                      <div class='image-box'> 
+                      <div class='image-box'>
                           <img src="${data.image}" alt="Avengers" class="image">
-                      </div>            
+                      </div>
                   </div>
                 </div>
         </div>
@@ -145,9 +158,9 @@ function createSeries(data, idx) {
             <div class='row'>
                 <div class='column'>
                 <div class='image-column backgroundColor-${idx}'>
-                    <div class='image-box'> 
+                    <div class='image-box'>
                         <img src="${data.image}" alt="Avengers" class="image">
-                    </div>            
+                    </div>
                 </div>
                 </div>
                 <div class='column'>
