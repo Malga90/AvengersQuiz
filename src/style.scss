@@ -1,9 +1,4 @@
-.hello {
-  color: red;
-  background: url("./img/a1.jpg");
-}
-
-/* // Variables
+// Variables
 $heading-color: #b2c8e5;
 $inputs-color: #e0e0e2;
 $button-color: #01153a;
@@ -155,7 +150,7 @@ body {
 // Header
 .header {
   height: 100vh;
-  background: url(../../src/img/avengers-1.jpg) no-repeat bottom center fixed;
+  background: url(img/avengers-1.jpg) no-repeat bottom center fixed;
   background-size: 100vw 100vh;
   font-family: "Poppins", sans-serif;
   padding: 20% 10%;
@@ -375,4 +370,4 @@ label {
   100% {
     @include transform(rotateZ(10deg));
   }
-} */
+}
