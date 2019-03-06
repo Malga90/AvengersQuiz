@@ -1,4 +1,16 @@
-import "./style.scss";
+import image1 from "./img/1.jpg";
+import image2 from "./img/2.jpg";
+import image3 from "./img/3.jpg";
+import image4 from "./img/4.jpg";
+import image5 from "./img/5.jpg";
+import image6 from "./img/6.jpg";
+import image7 from "./img/7.jpg";
+import answer1 from "./img/a1.jpg";
+import answer2 from "./img/a2.jpg";
+import answer3 from "./img/a3.jpg";
+import answer4 from "./img/a4.jpg";
+import answer5 from "./img/a4.jpg";
+import answer6 from "./img/a6.jpg";
 
 // HTML Template for questions
 
@@ -11,7 +23,7 @@ const quiz = [
     answer4: "Quality time with my family",
     answer5: "Gym",
     answer6: "Partyyy!",
-    image: "src/img/1.jpg"
+    image: image1
   },
   {
     question: "2. How are you spending your free time?",
@@ -21,7 +33,7 @@ const quiz = [
     answer4: "Quality time with my family",
     answer5: "Gym",
     answer6: "Partyyy!",
-    image: "src/img/2.jpg"
+    image: image2
   },
   {
     question: "3. How are you spending your free time?",
@@ -31,7 +43,7 @@ const quiz = [
     answer4: "Quality time with my family",
     answer5: "Gym",
     answer6: "Partyyy!",
-    image: "src/img/3.jpg"
+    image: image3
   },
   {
     question: "4. How are you spending your free time?",
@@ -41,7 +53,7 @@ const quiz = [
     answer4: "Quality time with my family",
     answer5: "Gym",
     answer6: "Partyyy!",
-    image: "src/img/4.jpg"
+    image: image4
   },
   {
     question: "5. How are you spending your free time?",
@@ -51,7 +63,7 @@ const quiz = [
     answer4: "Quality time with my family",
     answer5: "Gym",
     answer6: "Partyyy!",
-    image: "src/img/5.jpg"
+    image: image5
   },
   {
     question: "6. How are you spending your free time?",
@@ -61,7 +73,7 @@ const quiz = [
     answer4: "Quality time with my family",
     answer5: "Gym",
     answer6: "Partyyy!",
-    image: "src/img/6.jpg"
+    image: image6
   },
   {
     question: "7. How are you spending your free time?",
@@ -71,7 +83,7 @@ const quiz = [
     answer4: "Quality time with my family",
     answer5: "Gym",
     answer6: "Partyyy!",
-    image: "src/img/7.jpg"
+    image: image7
   }
 ];
 
@@ -206,42 +218,42 @@ function createSeries(data, idx) {
 const result = [
   {
     name: "Iron Man",
-    image: "src/img/a1.jpg",
+    image: answer1,
     backgroundColor: "background-color: #ff898b",
     description:
       "Chocolate I love bonbon pie. Caramels I love donut sesame snaps toffee chocolate caramels. Toffee bonbon bear claw cookie cheesecake I love lollipop jelly muffin. Danish sesame snaps pie tart. Caramels fruitcake jelly macaroon gummi bears cake lollipop carrot cake I love. I love pastry lollipop powder sesame snaps sweet roll tootsie roll bear claw liquorice."
   },
   {
     name: "Black Widow",
-    image: "src/img/a2.jpg",
+    image: answer2,
     backgroundColor: "background-color: #CCB5E0;",
     description:
       "Chocolate I love bonbon pie. Caramels I love donut sesame snaps toffee chocolate caramels. Toffee bonbon bear claw cookie cheesecake I love lollipop jelly muffin. Danish sesame snaps pie tart. Caramels fruitcake jelly macaroon gummi bears cake lollipop carrot cake I love. I love pastry lollipop powder sesame snaps sweet roll tootsie roll bear claw liquorice."
   },
   {
     name: "Hulk",
-    image: "src/img/a3.jpg",
+    image: answer3,
     backgroundColor: "background-color: #ACDDB5;",
     description:
       "Chocolate I love bonbon pie. Caramels I love donut sesame snaps toffee chocolate caramels. Toffee bonbon bear claw cookie cheesecake I love lollipop jelly muffin. Danish sesame snaps pie tart. Caramels fruitcake jelly macaroon gummi bears cake lollipop carrot cake I love. I love pastry lollipop powder sesame snaps sweet roll tootsie roll bear claw liquorice."
   },
   {
     name: "Hawkeye",
-    image: "src/img/a4.jpg",
+    image: answer4,
     backgroundColor: "background-color: #EDCFEA;",
     description:
       "Chocolate I love bonbon pie. Caramels I love donut sesame snaps toffee chocolate caramels. Toffee bonbon bear claw cookie cheesecake I love lollipop jelly muffin. Danish sesame snaps pie tart. Caramels fruitcake jelly macaroon gummi bears cake lollipop carrot cake I love. I love pastry lollipop powder sesame snaps sweet roll tootsie roll bear claw liquorice."
   },
   {
     name: "Captain America",
-    image: "src/img/a5.jpg",
+    image: answer5,
     backgroundColor: "background-color: #A2C3D4;",
     description:
       "Chocolate I love bonbon pie. Caramels I love donut sesame snaps toffee chocolate caramels. Toffee bonbon bear claw cookie cheesecake I love lollipop jelly muffin. Danish sesame snaps pie tart. Caramels fruitcake jelly macaroon gummi bears cake lollipop carrot cake I love. I love pastry lollipop powder sesame snaps sweet roll tootsie roll bear claw liquorice."
   },
   {
     name: "Thor",
-    image: "src/img/a6.jpg",
+    image: answer6,
     backgroundColor: "background-color: #C6DEA2;",
     description:
       "Chocolate I love bonbon pie. Caramels I love donut sesame snaps toffee chocolate caramels. Toffee bonbon bear claw cookie cheesecake I love lollipop jelly muffin. Danish sesame snaps pie tart. Caramels fruitcake jelly macaroon gummi bears cake lollipop carrot cake I love. I love pastry lollipop powder sesame snaps sweet roll tootsie roll bear claw liquorice."
