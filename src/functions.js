@@ -198,13 +198,13 @@ function createSeries(data, idx) {
                   <ul class="answers__list">
                     ${data.answers
                       .map(
-                        answer =>
+                        (answer, index) =>
                           `<label>
-                          <input type="radio" name="one" value="a">
-                            <li class="answers__list-item">
-                              ${answer}
+                            <input type="radio" name="one" value=${index + 1}>
+                              <li class="answers__list-item">
+                                ${answer}
                               </li>
-                        </label>`
+                          </label>`
                       )
                       .join("")}
                   </ul>
@@ -242,13 +242,13 @@ function createSeries(data, idx) {
               <ul class="answers__list">
                 ${data.answers
                   .map(
-                    answer =>
+                    (answer, index) =>
                       `<label>
-                      <input type="radio" name="one" value="a">
-                        <li class="answers__list-item">
-                          ${answer}
+                        <input type="radio" name="one" value=${index + 1}>
+                          <li class="answers__list-item">
+                            ${answer}
                           </li>
-                    </label>`
+                      </label>`
                   )
                   .join("")}
               </ul>

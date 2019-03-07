@@ -34,24 +34,24 @@ nextButton.forEach(currentBtn => {
       return false;
     }
 
-    if (checkedAnswer.value === "a") {
+    if (checkedAnswer.value === "1") {
       objIndex = finalAvenger.findIndex(obj => obj.avenger === "Iron Man");
       finalAvenger[objIndex].score += 1;
-    } else if (checkedAnswer.value === "b") {
+    } else if (checkedAnswer.value === "2") {
       objIndex = finalAvenger.findIndex(obj => obj.avenger === "Black Widow");
       finalAvenger[objIndex].score += 1;
-    } else if (checkedAnswer.value === "c") {
+    } else if (checkedAnswer.value === "3") {
       objIndex = finalAvenger.findIndex(obj => obj.avenger === "Hulk");
       finalAvenger[objIndex].score += 1;
-    } else if (checkedAnswer.value === "d") {
+    } else if (checkedAnswer.value === "4") {
       objIndex = finalAvenger.findIndex(obj => obj.avenger === "Hawkeye");
       finalAvenger[objIndex].score += 1;
-    } else if (checkedAnswer.value === "e") {
+    } else if (checkedAnswer.value === "5") {
       objIndex = finalAvenger.findIndex(
         obj => obj.avenger === "Captain America"
       );
       finalAvenger[objIndex].score += 1;
-    } else if (checkedAnswer.value === "f") {
+    } else if (checkedAnswer.value === "6") {
       objIndex = finalAvenger.findIndex(obj => obj.avenger === "Thor");
       finalAvenger[objIndex].score += 1;
     }
