@@ -12,212 +12,94 @@ import answer4 from "./img/a4.jpg";
 import answer5 from "./img/a5.jpg";
 import answer6 from "./img/a6.jpg";
 
-export const quiz = [
+const quiz = [
   {
     question: "1. How are you spending your free time?",
-    answer1: "Building something",
-    answer2: "Choosing black outfits",
-    answer3: "Smashing things and people",
-    answer4: "Quality time with my family",
-    answer5: "Gym",
-    answer6: "Partyyy!",
+    answers: [
+      "Building something",
+      "Choosing black outfits",
+      "Smashing things and people",
+      "Quality time with my family",
+      "Gym",
+      "Partyyy!"
+    ],
     image: image1
   },
   {
     question: "2. What is your greates value?",
-    answer1: "Building something",
-    answer2: "Choosing black outfits",
-    answer3: "Smashing things and people",
-    answer4: "Quality time with my family",
-    answer5: "Gym",
-    answer6: "Partyyy!",
+    answers: [
+      "Building something",
+      "Choosing black outfits",
+      "Smashing things and people",
+      "Quality time with my family",
+      "Gym",
+      "Partyyy!"
+    ],
     image: image2
   },
   {
     question: "3. How are you spending your free time?",
-    answer1: "Building something",
-    answer2: "Choosing black outfits",
-    answer3: "Smashing things and people",
-    answer4: "Quality time with my family",
-    answer5: "Gym",
-    answer6: "Partyyy!",
+    answers: [
+      "Building something",
+      "Choosing black outfits",
+      "Smashing things and people",
+      "Quality time with my family",
+      "Gym",
+      "Partyyy!"
+    ],
     image: image3
   },
   {
     question: "4. How are you spending your free time?",
-    answer1: "Building something",
-    answer2: "Choosing black outfits",
-    answer3: "Smashing things and people",
-    answer4: "Quality time with my family",
-    answer5: "Gym",
-    answer6: "Partyyy!",
+    answers: [
+      "Building something",
+      "Choosing black outfits",
+      "Smashing things and people",
+      "Quality time with my family",
+      "Gym",
+      "Partyyy!"
+    ],
     image: image4
   },
   {
     question: "5. How are you spending your free time?",
-    answer1: "Building something",
-    answer2: "Choosing black outfits",
-    answer3: "Smashing things and people",
-    answer4: "Quality time with my family",
-    answer5: "Gym",
-    answer6: "Partyyy!",
+    answers: [
+      "Building something",
+      "Choosing black outfits",
+      "Smashing things and people",
+      "Quality time with my family",
+      "Gym",
+      "Partyyy!"
+    ],
     image: image5
   },
   {
     question: "6. How are you spending your free time?",
-    answer1: "Building something",
-    answer2: "Choosing black outfits",
-    answer3: "Smashing things and people",
-    answer4: "Quality time with my family",
-    answer5: "Gym",
-    answer6: "Partyyy!",
+    answers: [
+      "Building something",
+      "Choosing black outfits",
+      "Smashing things and people",
+      "Quality time with my family",
+      "Gym",
+      "Partyyy!"
+    ],
     image: image6
   },
   {
     question: "7. How are you spending your free time?",
-    answer1: "Building something",
-    answer2: "Choosing black outfits",
-    answer3: "Smashing things and people",
-    answer4: "Quality time with my family",
-    answer5: "Gym",
-    answer6: "Partyyy!",
+    answers: [
+      "Building something",
+      "Choosing black outfits",
+      "Smashing things and people",
+      "Quality time with my family",
+      "Gym",
+      "Partyyy!"
+    ],
     image: image7
   }
 ];
 
-export const renderQuestions = quiz.forEach((data, idx) => {
-  const markup = createSeries(data, idx);
-  const section = document.createElement("section");
-  const container = document.querySelector("#pt-main");
-
-  section.classList.add("section__question");
-  section.classList.add("pt-page");
-  section.innerHTML = markup;
-  container.appendChild(section);
-});
-
-export function createSeries(data, idx) {
-  if (idx % 2 === 0) {
-    return `
-                    <div class='row'>
-                        <div class='column'>
-                        <div class='question-column'>
-                            <div class="question-box">
-                                <h2 class="question-heading">
-                                ${data.question}
-                                </h2>
-                                <ul class="answers__list">
-                                    <label>
-                                        <input type="radio" name="one" value="a"><li class="answers__list-item">${
-                                          data.answer1
-                                        }</li>
-                                    </label>
-                                    <label>
-                                        <input type="radio" name="one" value="b"><li class="answers__list-item">${
-                                          data.answer2
-                                        }</li>
-                                    </label>
-                                    <label>
-                                        <input type="radio" name="one" value="c"><li class="answers__list-item">${
-                                          data.answer3
-                                        }</li>
-                                    </label>
-                                    <label>
-                                        <input type="radio" name="one" value="d"><li class="answers__list-item">${
-                                          data.answer4
-                                        }</li>
-                                    </label>
-                                    <label>
-                                        <input type="radio" name="one" value="e"><li class="answers__list-item">${
-                                          data.answer5
-                                        }</li>
-                                    </label>
-                                    <label>
-                                        <input type="radio" name="one" value="f"><li class="answers__list-item">${
-                                          data.answer6
-                                        }</li>
-                                    </label>
-                                </ul>
-                                <div class="box-btn-next">
-                                  <button class="btn btn-next" >Next<span class="arrow-right">&rArr;</span></button>
-                                </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class='column'>
-                          <div class='image-column backgroundColor-${idx}'>
-                              <div class='image-box'>
-                                  <img src="${
-                                    data.image
-                                  }" alt="Avengers" class="image">
-                              </div>
-                          </div>
-                        </div>
-                </div>
-                `;
-  } else {
-    return `
-                    <div class='row'>
-                        <div class='column'>
-                        <div class='image-column backgroundColor-${idx}'>
-                            <div class='image-box'>
-                                <img src="${
-                                  data.image
-                                }" alt="Avengers" class="image">
-                            </div>
-                        </div>
-                        </div>
-                        <div class='column'>
-                        <div class='question-column'>
-                            <div class="question-box">
-                                <h2 class="question-heading">
-                                ${data.question}
-                                </h2>
-                                <ul class="answers__list">
-                                    <label>
-                                        <input type="radio" name="one" value="a"><li class="answers__list-item">${
-                                          data.answer1
-                                        }</li>
-                                    </label>
-                                    <label>
-                                        <input type="radio" name="one" value="b"><li class="answers__list-item">${
-                                          data.answer2
-                                        }</li>
-                                    </label>
-                                    <label>
-                                        <input type="radio" name="one" value="c"><li class="answers__list-item">${
-                                          data.answer3
-                                        }</li>
-                                    </label>
-                                    <label>
-                                        <input type="radio" name="one" value="d"><li class="answers__list-item">${
-                                          data.answer4
-                                        }</li>
-                                    </label>
-                                    <label>
-                                        <input type="radio" name="one" value="e"><li class="answers__list-item">${
-                                          data.answer5
-                                        }</li>
-                                    </label>
-                                    <label>
-                                        <input type="radio" name="one" value="f"><li class="answers__list-item">${
-                                          data.answer6
-                                        }</li>
-                                    </label>
-                                </ul>
-                                <div class="box-btn-next">
-                                  <button class="btn btn-next">Next<span class="arrow-right">&rArr;</span></button>
-                                </div>
-                            </div>
-                          </div>
-                        </div>
-                    </div>
-                `;
-  }
-}
-
-// HTML Template for result
-export let result = [
+let result = [
   {
     name: "Iron Man",
     image: answer1,
@@ -262,47 +144,7 @@ export let result = [
   }
 ];
 
-export function finalAnswer(data) {
-  const markup = `<div class="row">
-                            <div class="column">
-                              <div class="image-column">
-                                <div class="image-box">
-                                  <img src="${
-                                    data.image
-                                  }" alt="Avengers" class="image" />
-                                </div>
-                              </div>
-                            </div>
-                            <div class="column" style="${data.backgroundColor}">
-                              <div class="outcome-column">
-                                <h2 class="heading-secondary">
-                                  You are ${data.name}!
-                                </h2>
-                                <div class="outcome-text">
-                                  ${data.description}
-                                </div>
-                                <div class="box-btn-last">
-                                  <button class="btn btn-last">Play again!</button>
-                                </div>
-                              </div>
-                            </div>
-                        </div>`;
-  const section = document.createElement("section");
-  const container = document.querySelector("#pt-main");
-
-  section.classList.add("outcome");
-  section.classList.add("pt-page");
-  section.classList.add("pt-page-current");
-  section.classList.add("pt-page-rotateCubeLeftIn");
-  section.innerHTML = markup;
-  container.appendChild(section);
-  return markup;
-}
-
-// Quiz
-export const pages = document.querySelectorAll(".pt-page");
-export let current = 0;
-export let finalAvenger = [
+let finalAvenger = [
   {
     avenger: "Iron Man",
     score: 0
@@ -329,7 +171,135 @@ export let finalAvenger = [
   }
 ];
 
-export function rotateCube() {
+const renderQuestions = quiz.forEach((data, idx) => {
+  const markup = createSeries(data, idx);
+  const section = document.createElement("section");
+  const container = document.querySelector("#pt-main");
+
+  section.classList.add("section__question");
+  section.classList.add("pt-page");
+  section.innerHTML = markup;
+  container.appendChild(section);
+});
+
+const pages = document.querySelectorAll(".pt-page");
+let current = 0;
+
+function createSeries(data, idx) {
+  if (idx % 2 === 0) {
+    return `
+      <div class='row'>
+          <div class='column'>
+          <div class='question-column'>
+              <div class="question-box">
+                  <h2 class="question-heading">
+                  ${data.question}
+                  </h2>
+                  <ul class="answers__list">
+                    ${data.answers
+                      .map(
+                        answer =>
+                          `<label>
+                          <input type="radio" name="one" value="a">
+                            <li class="answers__list-item">
+                              ${answer}
+                              </li>
+                        </label>`
+                      )
+                      .join("")}
+                  </ul>
+                  <div class="box-btn-next">
+                    <button class="btn btn-next" >Next<span class="arrow-right">&rArr;</span></button>
+                  </div>
+              </div>
+            </div>
+          </div>
+          <div class='column'>
+            <div class='image-column backgroundColor-${idx}'>
+                <div class='image-box'>
+                    <img src="${data.image}" alt="Avengers" class="image">
+                </div>
+            </div>
+          </div>
+      </div>
+                `;
+  } else {
+    return `
+      <div class='row'>
+        <div class='column'>
+          <div class='image-column backgroundColor-${idx}'>
+              <div class='image-box'>
+                  <img src="${data.image}" alt="Avengers" class="image">
+              </div>
+          </div>
+        </div>
+        <div class='column'>
+          <div class='question-column'>
+            <div class="question-box">
+              <h2 class="question-heading">
+              ${data.question}
+              </h2>
+              <ul class="answers__list">
+                ${data.answers
+                  .map(
+                    answer =>
+                      `<label>
+                      <input type="radio" name="one" value="a">
+                        <li class="answers__list-item">
+                          ${answer}
+                          </li>
+                    </label>`
+                  )
+                  .join("")}
+              </ul>
+              <div class="box-btn-next">
+                <button class="btn btn-next">Next<span class="arrow-right">&rArr;</span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>`;
+  }
+}
+
+function finalAnswer(data) {
+  const markup = `<div class="row">
+                    <div class="column">
+                      <div class="image-column">
+                        <div class="image-box">
+                          <img src="${
+                            data.image
+                          }" alt="Avengers" class="image" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="column" style="${data.backgroundColor}">
+                      <div class="outcome-column">
+                        <h2 class="heading-secondary">
+                          You are ${data.name}!
+                        </h2>
+                        <div class="outcome-text">
+                          ${data.description}
+                        </div>
+                        <div class="box-btn-last">
+                          <button class="btn btn-last">Play again!</button>
+                        </div>
+                      </div>
+                    </div>
+                </div>`;
+  const section = document.createElement("section");
+  const container = document.querySelector("#pt-main");
+
+  section.classList.add("outcome");
+  section.classList.add("pt-page");
+  section.classList.add("pt-page-current");
+  section.classList.add("pt-page-rotateCubeLeftIn");
+  section.innerHTML = markup;
+  container.appendChild(section);
+  return markup;
+}
+
+function rotateCube() {
   pages[current].classList.add("pt-page-rotateCubeLeftOut");
   pages[current].classList.add("pt-page-ontop");
 
@@ -346,8 +316,19 @@ export function rotateCube() {
   }, 600);
 }
 
-export function compare(a, b) {
+function compare(a, b) {
   if (a.score > b.score) return -1;
   if (a.score < b.score) return 1;
   return 0;
 }
+
+export {
+  renderQuestions,
+  createSeries,
+  finalAnswer,
+  rotateCube,
+  compare,
+  finalAvenger,
+  current,
+  result
+};
