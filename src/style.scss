@@ -62,6 +62,18 @@ html {
   font-size: 62.5%;
   scroll-behavior: smooth;
   height: 100%;
+
+  @include respond(tab-land) {
+    font-size: 56.25%;
+  }
+
+  @include respond(tab-port) {
+    font-size: 50%;
+  }
+
+  @include respond(phone) {
+    font-size: 40%;
+  }
 }
 
 body {
@@ -84,6 +96,10 @@ body {
   color: $button-color;
   margin-bottom: 8%;
   line-height: 5rem;
+
+  @include respond(tab-port) {
+    margin-bottom: 4%;
+  }
 }
 
 // Buttons
@@ -124,6 +140,10 @@ body {
   font-family: "Poppins", sans-serif;
   padding: 3% 6%;
 
+  @include respond(tab-port) {
+    padding: 1.5% 3%;
+  }
+
   &:hover {
     color: $inputs-color;
     border: 3px solid $inputs-color;
@@ -138,6 +158,11 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
+
+  @include respond(tab-port) {
+    flex-direction: column;
+    height: 100vh;
+  }
 }
 
 .column {
@@ -175,6 +200,10 @@ body {
   height: 100vh;
   background-color: $question-column-color;
   padding: 15%;
+
+  @include respond(tab-port) {
+    padding: 7.5%;
+  }
 }
 
 .answers__list {
@@ -190,6 +219,10 @@ body {
 
 .box-btn-next {
   margin-top: 10%;
+
+  @include respond(tab-port) {
+    margin-top: 5%;
+  }
 }
 
 .arrow-right {
@@ -229,12 +262,20 @@ label {
 
 .image-box {
   min-width: 0;
+
+  @include respond(tab-port) {
+    max-height: 50vh;
+  }
 }
 
 .image {
   width: 65rem;
   max-width: 100%;
   max-height: 100%;
+
+  @include respond(tab-port) {
+    width: 38rem;
+  }
 }
 
 // Section outcome
@@ -245,6 +286,10 @@ label {
   flex-direction: column;
   align-items: center;
   padding: 17%;
+
+  @include respond(tab-port) {
+    padding: 7%;
+  }
 }
 
 .outcome-text {
@@ -256,6 +301,10 @@ label {
   margin-top: 20%;
   display: flex;
   justify-content: center;
+
+  @include respond(tab-port) {
+    margin-top: 10%;
+  }
 }
 
 // CSS for cube - perspective
