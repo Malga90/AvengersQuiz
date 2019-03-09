@@ -101,6 +101,7 @@ const quiz = [
 
 let result = [
   {
+    id: 1,
     name: "Iron Man",
     image: answer1,
     backgroundColor: "background-color: #ff898b",
@@ -108,6 +109,7 @@ let result = [
       "Chocolate I love bonbon pie. Caramels I love donut sesame snaps toffee chocolate caramels. Toffee bonbon bear claw cookie cheesecake I love lollipop jelly muffin. Danish sesame snaps pie tart. Caramels fruitcake jelly macaroon gummi bears cake lollipop carrot cake I love. I love pastry lollipop powder sesame snaps sweet roll tootsie roll bear claw liquorice."
   },
   {
+    id: 2,
     name: "Black Widow",
     image: answer2,
     backgroundColor: "background-color: #CCB5E0;",
@@ -115,6 +117,7 @@ let result = [
       "Chocolate I love bonbon pie. Caramels I love donut sesame snaps toffee chocolate caramels. Toffee bonbon bear claw cookie cheesecake I love lollipop jelly muffin. Danish sesame snaps pie tart. Caramels fruitcake jelly macaroon gummi bears cake lollipop carrot cake I love. I love pastry lollipop powder sesame snaps sweet roll tootsie roll bear claw liquorice."
   },
   {
+    id: 3,
     name: "Hulk",
     image: answer3,
     backgroundColor: "background-color: #ACDDB5;",
@@ -122,6 +125,7 @@ let result = [
       "Chocolate I love bonbon pie. Caramels I love donut sesame snaps toffee chocolate caramels. Toffee bonbon bear claw cookie cheesecake I love lollipop jelly muffin. Danish sesame snaps pie tart. Caramels fruitcake jelly macaroon gummi bears cake lollipop carrot cake I love. I love pastry lollipop powder sesame snaps sweet roll tootsie roll bear claw liquorice."
   },
   {
+    id: 4,
     name: "Hawkeye",
     image: answer4,
     backgroundColor: "background-color: #EDCFEA;",
@@ -129,6 +133,7 @@ let result = [
       "Chocolate I love bonbon pie. Caramels I love donut sesame snaps toffee chocolate caramels. Toffee bonbon bear claw cookie cheesecake I love lollipop jelly muffin. Danish sesame snaps pie tart. Caramels fruitcake jelly macaroon gummi bears cake lollipop carrot cake I love. I love pastry lollipop powder sesame snaps sweet roll tootsie roll bear claw liquorice."
   },
   {
+    id: 5,
     name: "Captain America",
     image: answer5,
     backgroundColor: "background-color: #A2C3D4;",
@@ -136,6 +141,7 @@ let result = [
       "Chocolate I love bonbon pie. Caramels I love donut sesame snaps toffee chocolate caramels. Toffee bonbon bear claw cookie cheesecake I love lollipop jelly muffin. Danish sesame snaps pie tart. Caramels fruitcake jelly macaroon gummi bears cake lollipop carrot cake I love. I love pastry lollipop powder sesame snaps sweet roll tootsie roll bear claw liquorice."
   },
   {
+    id: 6,
     name: "Thor",
     image: answer6,
     backgroundColor: "background-color: #C6DEA2;",
@@ -222,7 +228,8 @@ function createSeries(data, idx) {
                       .join("")}
                   </ul>
                   <div class="box-btn-next">
-                    <button class="btn btn-next" >Next<span class="arrow-right">&rArr;</span></button>
+                    <button class="btn btn-next" data-button="${idx}" >Next<span class="arrow-right">&rArr;</span>
+                    </button>
                   </div>
               </div>
             </div>
@@ -230,7 +237,7 @@ function createSeries(data, idx) {
           <div class='column'>
             <div class='image-column backgroundColor-${idx}'>
                 <div class='image-box'>
-                    <img src="${data.image}" alt="Avengers" class="image">
+                    <img src="${data.image}"  alt="Avengers" class="image">
                 </div>
             </div>
           </div>
@@ -266,7 +273,8 @@ function createSeries(data, idx) {
                   .join("")}
               </ul>
               <div class="box-btn-next">
-                <button class="btn btn-next">Next<span class="arrow-right">&rArr;</span></button>
+              <button class="btn btn-next" data-button="${idx}" >Next<span class="arrow-right">&rArr;</span>
+              </button>
               </div>
             </div>
           </div>
@@ -307,9 +315,20 @@ function finalAnswer(data) {
   section.classList.add("pt-page");
   section.classList.add("pt-page-current");
   section.classList.add("pt-page-rotateCubeLeftIn");
+
   section.innerHTML = markup;
   container.appendChild(section);
   return markup;
+}
+
+function winnerAvenger() {
+  finalAvenger.sort(compare);
+  let winner = finalAvenger[0];
+
+  let resultAvenger;
+
+  resultAvenger = result.findIndex(obj => obj.id === winner.id);
+  finalAnswer(result[resultAvenger]);
 }
 
 function rotateCube() {
@@ -338,6 +357,7 @@ function compare(a, b) {
 export {
   renderQuestions,
   findAvenger,
+  winnerAvenger,
   createSeries,
   finalAnswer,
   rotateCube,
