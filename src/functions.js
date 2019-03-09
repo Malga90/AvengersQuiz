@@ -146,26 +146,32 @@ let result = [
 
 let finalAvenger = [
   {
+    id: 1,
     avenger: "Iron Man",
     score: 0
   },
   {
+    id: 2,
     avenger: "Black Widow",
     score: 0
   },
   {
+    id: 3,
     avenger: "Hulk",
     score: 0
   },
   {
+    id: 4,
     avenger: "Hawkeye",
     score: 0
   },
   {
+    id: 5,
     avenger: "Captain America",
     score: 0
   },
   {
+    id: 6,
     avenger: "Thor",
     score: 0
   }
@@ -184,6 +190,13 @@ const renderQuestions = quiz.forEach((data, idx) => {
 
 const pages = document.querySelectorAll(".pt-page");
 let current = 0;
+
+function findAvenger(answerValue) {
+  let objIndex;
+
+  objIndex = finalAvenger.findIndex(obj => obj.id === Number(answerValue));
+  finalAvenger[objIndex].score += 1;
+}
 
 function createSeries(data, idx) {
   if (idx % 2 === 0) {
@@ -324,6 +337,7 @@ function compare(a, b) {
 
 export {
   renderQuestions,
+  findAvenger,
   createSeries,
   finalAnswer,
   rotateCube,

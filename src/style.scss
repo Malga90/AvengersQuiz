@@ -179,12 +179,21 @@ body {
   background-size: 100vw 100vh;
   font-family: "Poppins", sans-serif;
   padding: 20% 10%;
+
+  @include respond(tab-port) {
+    padding: 10% 5%;
+  }
 }
 
 .heading-box {
   display: flex;
   flex-direction: column;
+  height: 50vh;
   width: 40%;
+
+  @include respond(tab-port) {
+    justify-content: flex-end;
+  }
 }
 
 .box-btn {

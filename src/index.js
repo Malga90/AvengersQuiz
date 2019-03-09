@@ -1,5 +1,6 @@
 import {
   renderQuestions,
+  findAvenger,
   createSeries,
   finalAnswer,
   rotateCube,
@@ -28,33 +29,27 @@ nextButton.forEach(currentBtn => {
     ]);
 
     let winner = finalAvenger[0];
-    let resultAvenger, objIndex;
+    let resultAvenger;
 
     if (!checkedAnswer) {
       return false;
     }
 
     if (checkedAnswer.value === "1") {
-      objIndex = finalAvenger.findIndex(obj => obj.avenger === "Iron Man");
-      finalAvenger[objIndex].score += 1;
+      findAvenger(1);
     } else if (checkedAnswer.value === "2") {
-      objIndex = finalAvenger.findIndex(obj => obj.avenger === "Black Widow");
-      finalAvenger[objIndex].score += 1;
+      findAvenger(2);
     } else if (checkedAnswer.value === "3") {
-      objIndex = finalAvenger.findIndex(obj => obj.avenger === "Hulk");
-      finalAvenger[objIndex].score += 1;
+      findAvenger(3);
     } else if (checkedAnswer.value === "4") {
-      objIndex = finalAvenger.findIndex(obj => obj.avenger === "Hawkeye");
-      finalAvenger[objIndex].score += 1;
+      findAvenger(4);
     } else if (checkedAnswer.value === "5") {
-      objIndex = finalAvenger.findIndex(
-        obj => obj.avenger === "Captain America"
-      );
-      finalAvenger[objIndex].score += 1;
+      findAvenger(5);
     } else if (checkedAnswer.value === "6") {
-      objIndex = finalAvenger.findIndex(obj => obj.avenger === "Thor");
-      finalAvenger[objIndex].score += 1;
+      findAvenger(6);
     }
+
+    console.log(finalAvenger);
 
     checkedAnswer.checked = false;
 
