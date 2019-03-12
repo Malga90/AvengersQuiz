@@ -283,7 +283,7 @@ label {
   max-height: 100%;
 
   @include respond(tab-port) {
-    width: 38rem;
+    max-width: 38rem;
   }
 }
 

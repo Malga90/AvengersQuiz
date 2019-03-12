@@ -302,9 +302,6 @@ function finalAnswer(data) {
                         <div class="outcome-text">
                           ${data.description}
                         </div>
-                        <div class="box-btn-last">
-                          <button class="btn btn-last">Play again!</button>
-                        </div>
                       </div>
                     </div>
                 </div>`;
@@ -345,7 +342,7 @@ function rotateCube() {
     pages[current - 1].classList.remove("pt-page-current");
     pages[current - 1].classList.remove("pt-page-rotateCubeLeftOut");
     pages[current - 1].classList.remove("pt-page-ontop");
-  }, 600);
+  }, 1000);
 }
 
 function compare(a, b) {
